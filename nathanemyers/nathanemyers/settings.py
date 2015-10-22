@@ -26,6 +26,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+SITE_ID = 1
 
 # Application definition
 
@@ -37,6 +38,10 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'nbapowerranks',
+    'mptt',
+    'tagging',
+    'zinnia',
+    'django.contrib.sites',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -63,6 +68,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.i18n',
+                'zinnia.context_processors.version',
             ],
         },
     },
