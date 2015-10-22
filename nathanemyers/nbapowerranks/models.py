@@ -22,5 +22,5 @@ class Ranking(models.Model):
     rank = models.IntegerField()
     summary = models.TextField()
     def __str__(self):
-        return year + 'week ' + week + ': ' + team + ' #' + rank
+        return year + ' week ' + week + ': ' + team + ' #' + rank
 
