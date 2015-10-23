@@ -1,4 +1,33 @@
 .header-container {
   background-color: tomato;
   height: 200px;
+  font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica'
+}
+
+.header-title {
+  font-size: 26px;
+  display: inline-block;
+}
+
+.header {
+}
+
+.header ul {
+  display: inline-block;
+}
+
+.header li {
+  list-style: none;
+  display: inline-block;
+  padding: 15px 25px;
+}
+
+.main-container {
+  background-color: gray;
+  height: 100%;
+}
+
+.main {
+  background-color: tomato;
+  height: 100%;
 }
