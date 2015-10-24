@@ -4,6 +4,7 @@
   height: 125px;
   font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica';
   border-bottom: 1px solid #DCDCDC;
+  color: #4A4A4A;
 }
 
 .header-title {
@@ -22,6 +23,7 @@
 
 .nav {
   text-align: center;
+  color: #4A4A4A;
 }
 
 .nav ul {
@@ -44,11 +46,11 @@
 .main-container {
   background-color: #ECEBEB;
   height: 100%;
+  overflow: hidden;
 }
 
 .main {
   background-color: #E8E8E8;
   height: 100%;
   border-top: 1px solid #DCDCDC;
-  overflow: hidden;
 }
