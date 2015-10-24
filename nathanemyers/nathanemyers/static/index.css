@@ -66,13 +66,21 @@
 }
 
 .post-title {
-  font-size: 22px;
+  font-size: 37px;
+}
+
+.post-title a:hover {
+  text-decoration: none;
 }
 
 .post-lead {
-  18px;
+  display: inline-block;
+  font-size: 22px;
+  color: #4A4A4A;
+  margin-bottom: 10px;
 }
 
 .post-content {
-
+  font-size: 18px;
+  color: #4A4A4A;
 }
