@@ -113,4 +113,5 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
         os.path.join(BASE_DIR, 'nathanemyers/static'),
+        os.path.join(BASE_DIR, 'uploads'),
         )

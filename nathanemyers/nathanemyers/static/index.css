@@ -54,3 +54,21 @@
   height: 100%;
   border-top: 1px solid #DCDCDC;
 }
+
+.post {
+  margin: 5px;
+  background-color: tomato;
+  padding: 10px;
+}
+
+.post-title {
+  font-size: 22px;
+}
+
+.post-lead {
+  18px;
+}
+
+.post-content {
+
+}
