@@ -16,6 +16,10 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin 
 
+# imports for user uploads to work, docs recommend changing this for production
+from django.conf import settings
+from django.conf.urls.static import static
+
 from . import views
  
 urlpatterns = [
@@ -23,4 +27,4 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^weblog/', include('zinnia.urls', namespace='zinnia')),
     url(r'^comments/', include('django_comments.urls')),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
