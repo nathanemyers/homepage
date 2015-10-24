@@ -61,6 +61,10 @@
   padding: 10px;
 }
 
+.post-image img{
+  width: 100% 
+}
+
 .post-title {
   font-size: 22px;
 }
