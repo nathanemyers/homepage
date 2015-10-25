@@ -25,6 +25,9 @@ from . import views
 urlpatterns = [
     url(r'^$', views.IndexView.as_view(), name='index'),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^weblog/', include('zinnia.urls', namespace='zinnia')),
-    url(r'^comments/', include('django_comments.urls')),
+    url(r'^projects/', views.ProjectsView.as_view(), name='projects'),
+    url(r'^about/', views.AboutView.as_view(), name='about'),
+    url(r'^contact/', views.ContactView.as_view(), name='contact'),
+    #url(r'^weblog/', include('zinnia.urls', namespace='zinnia')),
+    #url(r'^comments/', include('django_comments.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

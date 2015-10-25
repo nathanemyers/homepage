@@ -13,3 +13,11 @@ class IndexView(generic.ListView):
         """Return the last five published posts"""
         return Entry.objects.order_by('-start_publication')[:5]
 
+class ProjectsView(generic.TemplateView):
+    template_name = 'projects.html'
+
+class AboutView(generic.TemplateView):
+    template_name = 'about.html'
+
+class ContactView(generic.TemplateView):
+    template_name = 'contact.html'
