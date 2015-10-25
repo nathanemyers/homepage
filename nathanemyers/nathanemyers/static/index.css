@@ -1,5 +1,4 @@
 .header-container {
-  /*background-color: tomato;*/
   background: linear-gradient(to right, #D3E8CF, #9ABFD6);
   height: 125px;
   font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica';
@@ -46,7 +45,7 @@
 .main-container {
   background-color: #ECEBEB;
   height: 100%;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .main {
