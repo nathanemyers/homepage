@@ -34,3 +34,8 @@
     stroke: green;
     stroke-width: 12px;
 }
+
+.nba-legacy-chart {
+  background-color: #F9F9F9;
+  border: 1px solid #BDBDBD;
+}

@@ -1,10 +1,11 @@
-.about {
-
+.about-summary {
+  font-size: 18px;
 }
 
 .profile-pic {
   text-align: center;
+  margin: 10px 0;
 }
 .profile-pic img {
-  width: 300px;
+  width: 100%;
 }
