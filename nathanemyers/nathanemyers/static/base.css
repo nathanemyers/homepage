@@ -1,5 +1,9 @@
-a:hover {
+.body a:hover, .body a:visited, .body a:link, .body a:active {
   text-decoration: none;
+}
+
+.body a {
+  color: #427371;
 }
 
 .header-container {

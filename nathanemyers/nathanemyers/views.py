@@ -14,7 +14,10 @@ class IndexView(generic.ListView):
         return Entry.objects.order_by('-start_publication')[:5]
 
 class ProjectsView(generic.TemplateView):
-    template_name = 'projects.html'
+    template_name = 'projects/projects.html'
+
+class NBALegacyView(generic.TemplateView):
+    template_name = 'projects/nba-legacy.html'
 
 class AboutView(generic.TemplateView):
     template_name = 'about.html'
