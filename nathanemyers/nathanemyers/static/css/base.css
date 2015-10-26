@@ -62,3 +62,7 @@
   border-top: 1px solid #DCDCDC;
   margin-bottom: 20px;
 }
+
+.content {
+  min-height: 100%;
+}
