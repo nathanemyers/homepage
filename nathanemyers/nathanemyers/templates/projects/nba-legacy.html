@@ -2,9 +2,21 @@
 
 {% block head %}
 <link rel="stylesheet" href="/static/projects.css" type="text/css" media="all" />
+<link rel="stylesheet" href="/static/css/smash_style.css">
+<script type="text/javascript" src="/static/lib/d3/d3.min.js"></script>
+<script type="text/javascript" src="/static/nba-legacy/nba-rankings-chart.js"></script>
 {% endblock %}
 
 {% block content %}
+<div class="">
+  <div class="svg_target_1"></div>
+</div>
 2014-2015 NBA Power Rankings
 
+<script> 
+build_smash_power_rankings(".svg_target_1", { 
+  plot: { width: 900, height: 550}, 
+  margin: { top: 30, left: 220, right: 40, bottom: 50 } 
+});
+</script>
 {% endblock %}
