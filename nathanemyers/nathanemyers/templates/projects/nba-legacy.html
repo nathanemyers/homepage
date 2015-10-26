@@ -1,17 +1,21 @@
 {% extends "base.html" %}
 
 {% block head %}
-<link rel="stylesheet" href="/static/projects.css" type="text/css" media="all" />
+<link rel="stylesheet" href="/static/css/post-detail.css" type="text/css" media="all" />
 <link rel="stylesheet" href="/static/css/smash_style.css">
 <script type="text/javascript" src="/static/lib/d3/d3.min.js"></script>
 <script type="text/javascript" src="/static/nba-legacy/nba-rankings-chart.js"></script>
 {% endblock %}
 
 {% block content %}
-<div class="">
-  <div class="svg_target_1"></div>
+<div class="post-detail-title">
+  2014-2015 Weekly NBA Power Rankings
 </div>
-2014-2015 NBA Power Rankings
+<div class="svg_target_1"></div>
+<div class="post-detail-content">
+  <p>Behold! The week by week power rankings of the 2014-2015 NBA season!</p>
+  <p>This chart was put together using <a target="_blank" href="http://espn.go.com/nba/powerrankings">ESPN's weekly power rankings</a>.</p>
+</div>
 
 <script> 
 build_smash_power_rankings(".svg_target_1", { 
