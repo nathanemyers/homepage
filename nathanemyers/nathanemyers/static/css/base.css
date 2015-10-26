@@ -55,12 +55,10 @@
 
 .main-container {
   background-color: #ECEBEB;
-  height: 100%;
-  overflow: auto;
 }
 
 .main {
   background-color: #E8E8E8;
-  height: 100%;
   border-top: 1px solid #DCDCDC;
+  margin-bottom: 20px;
 }
