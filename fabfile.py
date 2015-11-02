@@ -8,6 +8,8 @@ def deploy():
     run('mkdir -p ' + deploy_dir + 'nathanemyers/')
     run('mkdir -p ' + deploy_dir + 'nbapowerranks/')
     put('nathanemyers/nathanemyers/*.py', deploy_dir + 'nathanemyers/' )
+    put('nathanemyers/nathanemyers/static', deploy_dir + 'nathanemyers/' )
+    put('nathanemyers/nathanemyers/templates', deploy_dir + 'nathanemyers/' )
     put('nathanemyers/nbapowerranks/*.py', deploy_dir + 'nbapowerranks/' )
     put('nathanemyers/manage.py', deploy_dir )
 
