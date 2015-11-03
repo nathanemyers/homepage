@@ -8,9 +8,11 @@
 
 {% for post in latest_post_list %}
 <div class="post">
+  {% if post.image %}
   <div class="post-image">
     <img src="{{ post.image }}" alt="{{ post.caption }}"/>
   </div>
+  {% endif %}
   <div class='post-title'><a href="/">{{ post.title }}</a></div>
   <!--<span class='post-date'>{{ post.start_publication }}</span>-->
   <span class='post-lead'>{{ post.lead }}</span>
