@@ -6,27 +6,40 @@
   color: #427371;
 }
 
+.footer-container, .header-container {
+  /*background: linear-gradient(to right, #D3E8CF, #9ABFD6);*/
+  background: url(/static/images/grey-prism.svg) center;
+  color: #4A4A4A;
+}
+
+.footer-container {
+  height: 120px;
+}
+
+.header {
+  text-align: center;
+  margin-top: 35px;
+}
+
 .header-container {
-  background: linear-gradient(to right, #D3E8CF, #9ABFD6);
   height: 125px;
   font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica';
   border-bottom: 1px solid #DCDCDC;
-  color: #4A4A4A;
 }
 
 .header-title {
   font-size: 2.5em;
-  display: inline-block;
+}
+
+.header-bullet {
+  font-size: 2em;
+  padding: 0 1em; 
 }
 
 .header-slogan {
   font-size: 1.5em;
 }
 
-.header {
-  text-align: center;
-  margin-top: 22px;
-}
 
 .nav {
   text-align: center;
@@ -55,6 +68,7 @@
 
 .main-container {
   background-color: #ECEBEB;
+  background-color: #F1F1F1;
 }
 
 .main {
@@ -65,4 +79,6 @@
 
 .content {
   min-height: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }

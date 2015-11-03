@@ -21,28 +21,38 @@
 
 <body id="Hallo" class="body" onload="">
   <div class="header-container container-fluid">
-    <div class="header col-lg-offset-2 col-lg-8 col-md-offset-1 col-md-10 col-xs-offset-0 col-xs-12">
-      <p class="header-title">Nathan Myers</p>
-      <p class="header-slogan visible-sm visible-md visible-lg">Design &amp; Development</p>
+    <div class="header">
+      <span class="header-title">Nathan Myers</span>
+      <span class="header-bullet">&bull;</span>
+      <span class="header-slogan">Design &amp; Development</span>
     </div>
   </div>
 
   <div class="main-container container-fluid">
-    <div class="nav col-lg-offset-2 col-lg-8 col-md-offset-1 col-md-10 col-xs-offset-0 col-xs-12">
-      <ul>
-        <li><a href='/'>Home</a></li>
-        <li><a href='/projects/'>Projects</a></li>
-        <li><a href='/about'>About</a></li>
-        <li><a href='/contact'>Contact</a></li>
-      </ul>
-    </div>
-    <div class="main col-lg-offset-2 col-lg-8 col-md-offset-1 col-md-10 col-xs-offset-0 col-xs-12">
-      <div class="content">
-        {% block content %}
-        {% endblock %}
+    <div class="col-md-offset-1 col-md-10 col-xs-offset-0 col-xs-12">
+      <div class="nav">
+        <ul>
+          <li><a href='/'>Home</a></li>
+          <li><a href='/projects/'>Projects</a></li>
+          <li><a href='/about'>About</a></li>
+          <li><a href='/contact'>Contact</a></li>
+        </ul>
       </div>
-    </div>
 
+      <div class="main">
+        <div class="content">
+          {% block content %}
+          {% endblock %}
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+  <div class="footer-container container-fluid">
+    <div class="footer">
+    </div>
   </div>
 
 </body>
