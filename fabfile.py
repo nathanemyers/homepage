@@ -12,4 +12,5 @@ def deploy():
     put('nathanemyers/nathanemyers/templates', deploy_dir + 'nathanemyers/' )
     put('nathanemyers/nbapowerranks/*.py', deploy_dir + 'nbapowerranks/' )
     put('nathanemyers/manage.py', deploy_dir )
+    run('sudo python ' + deploy_dir + 'manage.py collectstatic')
 
