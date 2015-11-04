@@ -4,6 +4,8 @@ $main-background: #E8E8E8;
 body {
   /*background: url(/static/images/grey-prism.svg) center;*/
   background: linear-gradient(to right, #D3E8CF, #9ABFD6);
+  margin: 0;
+  font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica';
 
   a {
     color: #427371;
@@ -17,7 +19,6 @@ body {
 
 .header {
   color: $headline-text;
-  font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica';
   text-align: center;
   padding: 1.85em 0;
   /*border-bottom: 1px solid #DCDCDC;*/
@@ -67,6 +68,7 @@ body {
 .main-container {
   border-radius: .5em;
   background-color: #F1F1F1;
+  margin: 8px;
 }
 
 .main {
@@ -81,17 +83,20 @@ body {
 }
 
 .footer-container {
-  background-color: $main-background;
+  background-color: #545454;
   padding: .8em 0;
   margin-top: .5em;
 }
 
-.footer {
-  background-color: white;
+.footer-content {
+  display: inline-block;
+  vertical-align: top;
+  width: 60%;
+  color: #F9F9F9;
 }
 
 .profile-pic {
-  margin-left: 5%;
+  margin: 0 4%;
   border-radius: 50%;
   width: 30%;
 }
