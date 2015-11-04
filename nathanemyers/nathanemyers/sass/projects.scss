@@ -1,5 +1,31 @@
-.project-image img {
-  width: 100%;
+@import '_variables.scss';
+
+.project {
+  margin: 5px;
+  padding: 0 10px 10px 10px;
+}
+
+.project-image {
+
+  img {
+    width: 100%;
+  }
+
+  @media (min-width: $mobile-width) {
+    display: inline-block;
+    width: 40%;
+  }
+
+}
+
+.project-text {
+
+  @media (min-width: $mobile-width) {
+    vertical-align: top;
+    display: inline-block;
+    width: 55%;
+    margin-left: 3%;
+  }
 }
 
 .prjoect-title {

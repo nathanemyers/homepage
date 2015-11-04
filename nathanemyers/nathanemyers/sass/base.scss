@@ -1,5 +1,4 @@
-$headline-text: #4A4A4A;
-$main-background: #E8E8E8;
+@import '_variables.scss';
 
 body {
   /*background: url(/static/images/grey-prism.svg) center;*/
@@ -19,27 +18,36 @@ body {
 
 .header {
   color: $headline-text;
-  text-align: center;
+  display: table;
+  margin: 0 auto;
   padding: 1.85em 0;
-  /*border-bottom: 1px solid #DCDCDC;*/
 }
 
 .header-title {
   font-size: 1.5em;
   margin-bottom: .2em;
+
+  @media (min-width: $mobile-width) {
+    font-size: 2.2em;
+  }
 }
 
 .header-slogan {
   font-size: 1.2em;
-}
 
-.header-bullet {
-  display: none;
+  @media (min-width: $mobile-width) {
+    font-size: 1.6em;
+    color: lighten($headline-text, 10%);
+  }
 }
 
 .nav {
   text-align: center;
   color: $headline-text;
+  
+  @media (min-width: $mobile-width) {
+    font-size: 1.2em;
+  }
 
   ul {
     margin: 0;
@@ -69,6 +77,10 @@ body {
   border-radius: .5em;
   background-color: #F1F1F1;
   margin: 8px;
+
+  @media (min-width: $mobile-width) {
+    margin: 0 $desktop-gutter 20px;
+  }
 }
 
 .main {
@@ -86,6 +98,10 @@ body {
   background-color: #545454;
   padding: .8em 0;
   margin-top: .5em;
+
+  @media (min-width: $mobile-width) {
+    height: 150px; 
+  }
 }
 
 .footer-content {
@@ -95,8 +111,18 @@ body {
   color: #F9F9F9;
 }
 
+.footer {
+  @media (min-width: $mobile-width) {
+    margin: 0 $desktop-gutter;
+  }
+}
+
 .profile-pic {
   margin: 0 4%;
   border-radius: 50%;
   width: 30%;
+
+  @media (min-width: $mobile-width) {
+    width: 150px;
+  }
 }
