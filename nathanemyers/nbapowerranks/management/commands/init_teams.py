@@ -20,7 +20,7 @@ class Command(BaseCommand):
     #def add_arguments(self, parser):
 
     def handle(self, *args, **options):
-        with open('nbapowerranks/teams.json') as data_file:
+        with open('nbapowerranks/data/teams.json') as data_file:
             data = json.load(data_file)
 
         print 'Loading Teams...'

@@ -7,4 +7,4 @@ class ManagementCommandTests(TestCase):
 
     def test_init_teams(self):
        call_command('init_teams') 
-       self.assertEqual(len(Team.objects.all), 30)
+       self.assertEqual(len(Team.objects.all()), 30)
