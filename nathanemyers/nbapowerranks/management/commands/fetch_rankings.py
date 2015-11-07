@@ -97,7 +97,6 @@ class Command(BaseCommand):
                 nargs='?',
                 help='Fetch the specified week')
 
-
     def handle(self, *args, **options):
         url = 'http://espn.go.com/nba/powerrankings'
         if options['week']:

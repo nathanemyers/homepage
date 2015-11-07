@@ -25,6 +25,7 @@ from . import views
 urlpatterns = [
     url(r'^$', views.IndexView.as_view(), name='index'),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^nba/', include('nbapowerranks.urls', namespace='nba')),
     url(r'^projects/$', views.ProjectsView.as_view(), name='projects'),
     url(r'^projects/2014-2015-nba-power-rankings$', views.NBALegacyView.as_view(), name='projects'),
     url(r'^about/', views.AboutView.as_view(), name='about'),
