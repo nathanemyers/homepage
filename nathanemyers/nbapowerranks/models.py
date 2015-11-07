@@ -10,8 +10,10 @@ class Team(models.Model):
         return self.region + ' ' + self.name
 
 class Player(models.Model):
+    # TODO split name out into first and last
     name = models.CharField(max_length=200)
     team = models.ForeignKey(Team)
+    # TODO extend this with position and stats
     def __str__(self):
         return self.name
 
