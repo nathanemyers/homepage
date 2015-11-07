@@ -24,65 +24,65 @@ def stripTags(html, invalid_tags):
     return html
 
 def resolve_team(team_html_link):
-    if ('los-angeles-lakers' in team_html_link):
+    if 'los-angeles-lakers' in team_html_link:
         return Team.objects.get(name='Lakers')
-    if ('los-angeles-clippers' in team_html_link):
+    if 'los-angeles-clippers' in team_html_link:
         return Team.objects.get(name='Clippers')
-    if ('warriors' in team_html_link):
+    if 'warriors' in team_html_link:
         return Team.objects.get(name='Warriors')
-    if ('cavaliers' in team_html_link):
+    if 'cavaliers' in team_html_link:
         return Team.objects.get(name='Cavaliers')
-    if ('spurs' in team_html_link):
+    if 'spurs' in team_html_link:
         return Team.objects.get(name='Spurs')
-    if ('thunder' in team_html_link):
+    if 'thunder' in team_html_link:
         return Team.objects.get(name='Thunder')
-    if ('rockets' in team_html_link):
+    if 'rockets' in team_html_link:
         return Team.objects.get(name='Rockets')
-    if ('grizzlies' in team_html_link):
+    if 'grizzlies' in team_html_link:
         return Team.objects.get(name='Grizzlies')
-    if ('hawks' in team_html_link):
+    if 'hawks' in team_html_link:
         return Team.objects.get(name='Hawks')
-    if ('heat' in team_html_link):
+    if 'heat' in team_html_link:
         return Team.objects.get(name='Heat')
-    if ('bulls' in team_html_link):
+    if 'bulls' in team_html_link:
         return Team.objects.get(name='Bulls')
-    if ('pelicans' in team_html_link):
+    if 'pelicans' in team_html_link:
         return Team.objects.get(name='Pelicans')
-    if ('raptors' in team_html_link):
+    if 'raptors' in team_html_link:
         return Team.objects.get(name='Raptors')
-    if ('celtics' in team_html_link):
+    if 'celtics' in team_html_link:
         return Team.objects.get(name='Celtics')
-    if ('bucks' in team_html_link):
+    if 'bucks' in team_html_link:
         return Team.objects.get(name='Bucks')
-    if ('wizards' in team_html_link):
+    if 'wizards' in team_html_link:
         return Team.objects.get(name='Wizards')
-    if ('pacers' in team_html_link):
+    if 'pacers' in team_html_link:
         return Team.objects.get(name='Pacers')
-    if ('pistons' in team_html_link):
+    if 'pistons' in team_html_link:
         return Team.objects.get(name='Pistons')
-    if ('jazz' in team_html_link):
+    if 'jazz' in team_html_link:
         return Team.objects.get(name='Jazz')
-    if ('kings' in team_html_link):
+    if 'kings' in team_html_link:
         return Team.objects.get(name='Kings')
-    if ('suns' in team_html_link):
+    if 'suns' in team_html_link:
         return Team.objects.get(name='Suns')
-    if ('mavericks' in team_html_link):
+    if 'mavericks' in team_html_link:
         return Team.objects.get(name='Mavericks')
-    if ('hornets' in team_html_link):
+    if 'hornets' in team_html_link:
         return Team.objects.get(name='Hornets')
-    if ('magic' in team_html_link):
+    if 'magic' in team_html_link:
         return Team.objects.get(name='Magic')
-    if ('knicks' in team_html_link):
+    if 'knicks' in team_html_link:
         return Team.objects.get(name='Knicks')
-    if ('wolves' in team_html_link):
+    if 'wolves' in team_html_link:
         return Team.objects.get(name='Timberwolves')
-    if ('nuggets' in team_html_link):
+    if 'nuggets' in team_html_link:
         return Team.objects.get(name='Nuggets')
-    if ('blazers' in team_html_link):
+    if 'blazers' in team_html_link:
         return Team.objects.get(name='Trail Blazers')
-    if ('nets' in team_html_link):
+    if 'nets' in team_html_link:
         return Team.objects.get(name='Nets')
-    if ('76ers' in team_html_link):
+    if '76ers' in team_html_link:
         return Team.objects.get(name='76ers')
 
 class Command(BaseCommand):
