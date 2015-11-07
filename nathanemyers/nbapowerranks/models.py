@@ -24,3 +24,6 @@ class Ranking(models.Model):
     def __str__(self):
         return str(self.year) + ' week ' + str(self.week) + ': ' + str(self.team) + ' #' + str(self.rank)
 
+    class Meta:
+        ordering = ['year', 'week', 'rank']
+
