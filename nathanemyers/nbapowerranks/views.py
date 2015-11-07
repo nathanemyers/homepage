@@ -3,6 +3,8 @@ from django.http import HttpResponse, JsonResponse
 from .models import Team, Ranking
 
 # Create your views here.
+def chart(request):
+    return render(request, 'chart/nba_power_rankings.html')
 
 def week_rankings(request, year, week):
     rankings = Ranking.objects.filter(year=year, week=week)
