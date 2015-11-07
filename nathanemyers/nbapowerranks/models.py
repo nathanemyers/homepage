@@ -13,7 +13,7 @@ class Player(models.Model):
     name = models.CharField(max_length=200)
     team = models.ForeignKey(Team)
     def __str__(self):
-        return name
+        return self.name
 
 class Ranking(models.Model):
     year = models.IntegerField()
@@ -22,5 +22,5 @@ class Ranking(models.Model):
     rank = models.IntegerField()
     summary = models.TextField()
     def __str__(self):
-        return year + ' week ' + week + ': ' + team + ' #' + rank
+        return str(self.year) + ' week ' + str(self.week) + ': ' + str(self.team) + ' #' + str(self.rank)
 
