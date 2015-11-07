@@ -4,8 +4,12 @@ from bs4 import BeautifulSoup, NavigableString
 import urllib2
 import json
 import re
+import sys
 
 import pdb
+
+# TODO add this as an option
+YEAR = 2016
 
 def stripTags(html, invalid_tags):
     for tag in html:
@@ -95,11 +99,12 @@ class Command(BaseCommand):
 
 
     def handle(self, *args, **options):
-        # temp data
-        week = 0
+        url = 'http://espn.go.com/nba/powerrankings'
+        if options['week']:
+            url = 'http://espn.go.com/nba/powerrankings/_/week/' + str(options['week'])
 
-        url = 'http://espn.go.com/nba/powerrankings/_/week/' + str(week)
-        print 'Getting URL: ' + url
+        sys.stdout.write('Scraping URL: ' + url + '\n')
+        sys.stdout.flush()
         response = urllib2.urlopen(url)
         html = response.read()
         soup = BeautifulSoup(html, 'html.parser')
@@ -110,15 +115,25 @@ class Command(BaseCommand):
         table_head = table.find('tr', 'stathead').find('td').getText()
         m = re.search('Rankings: (Preseason|Week \w+)', table_head)
         matched_week = m.group(1)
-        if (matched_week == 'Preseason'):
+        if matched_week == 'Preseason':
             week = 0
         else:
             week = int(re.search('Week (\w+)', matched_week).group(1))
+
+        lookup = Ranking.objects.filter(year=YEAR, week=week)
+        if len(lookup) > 0: 
+            # TODO should check to see if all 30 rankings are present, 
+            # and clean up any partial uploads if needed
+            sys.stdout.write('Ranking data for Year: ' + str(YEAR) + ' Week: ' + str(week) + ' already present. Quiting.\n')
+            sys.stdout.flush()
+            return
 
         rows = table.find_all('tr', ['evenrow', 'oddrow'])
 
         for row in rows:
             cols = row.find_all('td')
+
+            # Here comes all the messy soup
             rank = cols[0].string
 
             city_col = cols[1].find_all('a')
@@ -129,10 +144,11 @@ class Command(BaseCommand):
             team = resolve_team(team_html_link)
 
             comment = stripTags(cols[3], ['b', 'i', 'a', 'u'])
+            # TODO comment.getText() will sometimes leave a bunch of whitespace at the end
             comment_string = comment.getText()
 
             rank_object = Ranking(
-                    year = '2016',
+                    year = YEAR,
                     rank = rank,
                     team = team,
                     summary = comment_string,
@@ -140,25 +156,5 @@ class Command(BaseCommand):
                     )
             rank_object.save()
 
-
-    def addRank(team_name, team_img, rank, date_index):
-        for team in teamdata['teams']:
-            if team['city'] == team_name:
-                if (team_name == 'Los Angeles' and team['name'] == 'Lakers' and ( 'lakers' in team_img )):
-                    team['values'].append({ 'date': date_index, 'ranking': rank })
-                    break;
-                elif (team_name == 'Los Angeles' and team['name'] == 'Clippers' and ( 'clippers' in team_img )):
-                    team['values'].append({ 'date': date_index, 'ranking': rank })
-                    break;
-                elif (team_name != 'Los Angeles'):
-                    team['values'].append({ 'date': date_index, 'ranking': rank })
-                    break;
-
-    def add_teams():
-        with open('nbapowerranks/teams.json') as data_file:
-            data = json.load(data_file)
-
-        for team in data['teams']:
-            print 'Adding team: ' + team['name']
-            team = Team(name=team['name'], region=team['city'], conference=team['conference'])
-            team.save()
+        sys.stdout.write('Finished scrape of Year: ' + str(YEAR) + ' Week: ' + str(week) + '.\n')
+            
