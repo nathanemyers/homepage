@@ -19,8 +19,14 @@ def year_rankings(request, year):
     formatted_rankings = {}
     for rank in rankings:
         if rank.team.name in formatted_rankings:
-            formatted_rankings[rank.team.name].append(rank.rank)
+            formatted_rankings[rank.team.name].append({
+                'week': rank.week,
+                'rank': rank.rank,
+                })
         else:
-            formatted_rankings[rank.team.name] = [rank.rank]
+            formatted_rankings[rank.team.name] = [{
+                'week': rank.week,
+                'rank': rank.rank,
+                }]
 
     return JsonResponse({'rankings': formatted_rankings})

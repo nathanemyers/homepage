@@ -1,9 +1,22 @@
 {% extends "base.html" %}
 
 {% block head %}
+  <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
   <script src="/static/d3_rankings.js"></script>
 {% endblock %}
 
 {% block content %}
 Hey it's the brand new power rankings!
+
+<div class="power_rankings">
+<div class="chart">
+  
+</div>
+
+<script>
+build_chart(".power_rankings", {
+  plot: {width: 700, height: 500},
+  margin: {top: 30, left: 220, right: 40, bottom: 50}
+})
+</script>
 {% endblock %}
