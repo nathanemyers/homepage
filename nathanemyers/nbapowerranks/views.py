@@ -17,6 +17,10 @@ def week_rankings(request, year, week):
 def year_rankings(request, year):
     rankings = Ranking.objects.filter(year=year)
     formatted_rankings = {}
+    # Ok, this is textbook what-not-to-do in forming your return
+    # queries but I am tired of fighting the django ORM right now
+    # so I'm just going to do it manually. For future reference,
+    # look at django's model 'prefetch_related'
     for rank in rankings:
         if rank.team.name in formatted_rankings:
             formatted_rankings[rank.team.name].append({
@@ -29,4 +33,14 @@ def year_rankings(request, year):
                 'rank': rank.rank,
                 }]
 
-    return JsonResponse({'rankings': formatted_rankings})
+    list_rankings = []
+    for team in formatted_rankings:
+        team_data = Team.objects.get(name=team)
+        list_rankings.append({
+            'name': team_data.name,
+            'color': team_data.color,
+            'rankings': formatted_rankings[team]
+            })
+    # I hope you're happy, django.
+
+    return JsonResponse({'results': list_rankings})
