@@ -26,7 +26,13 @@ class Command(BaseCommand):
         print 'Loading Teams...'
         for team in data['teams']:
             print team['name']
-            team = Team(name=team['name'], region=team['city'], conference=team['conference'])
+            team = Team(
+                    name=team['name'], 
+                    region=team['city'], 
+                    conference=team['conference'],
+                    division=team['division'],
+                    color=team['color'],
+                    )
             team.save()
 
         print 'Done!'
