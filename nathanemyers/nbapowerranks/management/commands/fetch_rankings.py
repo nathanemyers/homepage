@@ -89,7 +89,6 @@ class Command(BaseCommand):
     help = 'Fetches the weekly ranking data from ESPN. If no week is specified, fetch rankings from the current week'
 
     def add_arguments(self, parser):
-        parser.add_argument('week', nargs='?', type=int)
         parser.add_argument('--week',
                 action='store',
                 type=int,
@@ -99,7 +98,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         url = 'http://espn.go.com/nba/powerrankings'
-        if options['week']:
+        if 'week' in options:
             url = 'http://espn.go.com/nba/powerrankings/_/week/' + str(options['week'])
 
         sys.stdout.write('Scraping URL: ' + url + '\n')
