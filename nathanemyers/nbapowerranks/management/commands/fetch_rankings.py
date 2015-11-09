@@ -98,7 +98,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         url = 'http://espn.go.com/nba/powerrankings'
-        if 'week' in options:
+        if 'week' in options and options['week'] is not None:
             url = 'http://espn.go.com/nba/powerrankings/_/week/' + str(options['week'])
 
         sys.stdout.write('Scraping URL: ' + url + '\n')
