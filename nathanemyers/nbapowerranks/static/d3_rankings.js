@@ -1,11 +1,17 @@
 
 
 function build_chart(select_target, bounds) {
+  var border_left = 120;
+  var border_right = 10;
+  var border_top = 10;
+  var border_bottom = 10;
+  var width = 900;
+  var height = 500;
 
   var x = d3.scale.linear()
-    .range([0, bounds.plot.width]);
+    .range([border_left, width - ( border_left + border_right )]);
   var y = d3.scale.linear()
-    .range([0, bounds.plot.height]);
+    .range([border_top, height - ( border_top + border_bottom )]);
 
   var svgContainer = d3.select('.chart').append('svg')
     .attr('width', bounds.plot.width)
@@ -31,10 +37,11 @@ function build_chart(select_target, bounds) {
       .append('text');
 
     text
-      .attr('x', function(d) {return 0;})
+      .attr('x', function(d) {return border_left - 5;}) // -5 to add margin
       .attr('y', function(d) {
-        return y(d.rankings[0].rank/30);
+        return y(d.rankings[0].rank/30) + 5; // +5 to center text
       })
+      .style('text-anchor', 'end')
       .text(function(d) {return d.name;});
   }
 
