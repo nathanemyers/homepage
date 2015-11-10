@@ -23,4 +23,5 @@ def deploy():
 
     put('manage.py', deploy_dir )
     run('sudo python ' + deploy_dir + 'manage.py collectstatic')
+    run('sudo service apache2 restart')
 
