@@ -17,10 +17,10 @@ function build_chart(selector) {
 
   var x = d3.scale.linear()
     .domain([0, max_weeks])
-    .range([border_left, width - ( border_left + border_right )]);
+    .range([border_left, width - border_right]);
   var y = d3.scale.linear()
     .domain([1,30])
-    .range([border_top, height - ( border_top + border_bottom )]);
+    .range([border_top, height - border_bottom]);
 
   var line = d3.svg.line()
     .x(function(d) {return x(d.week);})
@@ -68,12 +68,13 @@ function build_chart(selector) {
 
     svgContainer.append('g')
       .attr('class', 'axis')
-      .attr('transform', 'translate(0,' + ( height - border_bottom ) + ')')
+      // -10 for 10px border
+      .attr('transform', 'translate(0,' + ( height - (border_bottom - 10) ) + ')')
       .call(xAxis);
 
       svgContainer.append('text')
         .attr('x', width/2)
-        .attr('y', height - border_bottom + 35)
+        .attr('y', height)
         .text('Week');
   });
 
