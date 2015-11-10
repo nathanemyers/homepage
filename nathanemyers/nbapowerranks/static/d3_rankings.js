@@ -1,58 +1,58 @@
 
-
 function build_chart(select_target, bounds) {
   var border_left = 120;
   var border_right = 10;
   var border_top = 10;
-  var border_bottom = 10;
+  var border_bottom = 40;
   var width = 900;
-  var height = 500;
+  var height = 600;
 
   var x = d3.scale.linear()
+    .domain([0,10])
     .range([border_left, width - ( border_left + border_right )]);
   var y = d3.scale.linear()
+    .domain([1,30])
     .range([border_top, height - ( border_top + border_bottom )]);
 
   var svgContainer = d3.select('.chart').append('svg')
-    .attr('width', bounds.plot.width)
-    .attr('height', bounds.plot.height);
+    .attr('width', width)
+    .attr('height', height);
 
-  var lineFunction = d3.svg.line()
-    .x(function(d) {return x(d.week/10);})
-    .y(function(d) {return y(d.rank/30) ;})
+  var line = d3.svg.line()
+    .x(function(d) {return x(d.week);})
+    .y(function(d) {return y(d.rank) ;})
     .interpolate('linear');
 
-  function draw_line(team) {
-    svgContainer.append('path')
-      .attr('d', lineFunction(team.rankings))
-      .attr('stroke', 'blue')
-      .attr('stroke-width', 2)
-      .attr('fill', 'none');
-  }
+  var xAxis = d3.svg.axis()
+    .scale(x);
 
-  function draw_labels(teams) {
-    text = svgContainer.selectAll('text')
-      .data(teams)
-      .enter()
-      .append('text');
-
-    text
-      .attr('x', function(d) {return border_left - 5;}) // -5 to add margin
-      .attr('y', function(d) {
-        return y(d.rankings[0].rank/30) + 5; // +5 to center text
-      })
-      .style('text-anchor', 'end')
-      .text(function(d) {return d.name;});
-  }
 
   $.getJSON("/nba/api/rankings/2016", function(data) {
     data = data.results;
 
+    var lines = svgContainer.selectAll('path')
+      .data(data)
+      .enter().append('path')
+      .attr('d', function(d) { return line(d.rankings); })
+      .attr('stroke', function(d) {return d.color;})
+      .attr('fill', 'none')
+      .attr('stroke-width', 2);
 
-    for (var i=0; i < data.length; i++) {
-      draw_line(data[i]);
-    }
-    draw_labels(data);
+    var labels = svgContainer.selectAll('text')
+      .data(data)
+      .enter()
+      .append('text')
+      .attr('x', function(d) {return border_left - 5;}) // -5 to add margin
+      .attr('y', function(d) {
+        return y(d.rankings[0].rank) + 5; // +5 to center text
+      })
+      .style('text-anchor', 'end')
+      .text(function(d) {return d.name;});
+
+    svgContainer.append('g')
+      .attr('class', 'axis')
+      .attr('transform', 'translate(0,' + ( height - border_bottom ) + ')')
+      .call(xAxis);
   });
 
 }
