@@ -62,7 +62,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'nathanemyers/templates')
+            os.path.join(BASE_DIR, 'nathanemyers/templates'),
+            os.path.join(BASE_DIR, 'nbapowerranks/templates'),
             ],
         'APP_DIRS': True,
         'OPTIONS': {
