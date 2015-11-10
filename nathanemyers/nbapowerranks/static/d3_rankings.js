@@ -54,6 +54,11 @@ function build_chart(select_target, bounds) {
       .attr('class', 'axis')
       .attr('transform', 'translate(0,' + ( height - border_bottom ) + ')')
       .call(xAxis);
+
+      svgContainer.append('text')
+        .attr('x', width/2)
+        .attr('y', height - border_bottom + 35)
+        .text('Week');
   });
 
 }
