@@ -8,7 +8,7 @@ function build_chart(select_target, bounds) {
   var height = 600;
 
   var x = d3.scale.linear()
-    .domain([0,10])
+    .domain([0,5])
     .range([border_left, width - ( border_left + border_right )]);
   var y = d3.scale.linear()
     .domain([1,30])
@@ -24,6 +24,7 @@ function build_chart(select_target, bounds) {
     .interpolate('linear');
 
   var xAxis = d3.svg.axis()
+    .ticks(5)
     .scale(x);
 
 
