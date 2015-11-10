@@ -1,22 +1,26 @@
 
-function build_chart(select_target, bounds) {
+function build_chart(selector) {
   var border_left = 120;
   var border_right = 10;
   var border_top = 10;
   var border_bottom = 40;
-  var width = 900;
-  var height = 600;
+
+  var svgContainer = d3.select(selector);
+  var width = parseInt(svgContainer.style('width'));
+  var height = parseInt(svgContainer.style('height'));
+
+  var max_weeks = Math.floor(width / 100);
+
+  if (max_weeks > 18) {
+    max_weeks = 18;
+  }
 
   var x = d3.scale.linear()
-    .domain([0,5])
+    .domain([0, max_weeks])
     .range([border_left, width - ( border_left + border_right )]);
   var y = d3.scale.linear()
     .domain([1,30])
     .range([border_top, height - ( border_top + border_bottom )]);
-
-  var svgContainer = d3.select('.chart').append('svg')
-    .attr('width', width)
-    .attr('height', height);
 
   var line = d3.svg.line()
     .x(function(d) {return x(d.week);})
@@ -24,7 +28,7 @@ function build_chart(select_target, bounds) {
     .interpolate('linear');
 
   var xAxis = d3.svg.axis()
-    .ticks(5)
+    .ticks(max_weeks)
     .scale(x);
 
 
@@ -38,6 +42,18 @@ function build_chart(select_target, bounds) {
       .attr('stroke', function(d) {return d.color;})
       .attr('fill', 'none')
       .attr('stroke-width', 2);
+
+    var bubbles = svgContainer.selectAll('circle')
+      .data(data)
+      .enter().append('circle')
+      .attr('cx', function(d) {
+        return x(d.rankings[d.rankings.length-1].week);
+      })
+      .attr('cy', function(d) {
+        return y(d.rankings[d.rankings.length-1].rank);
+      })
+      .attr('r', '2')
+      .style('fill', function(d) {return d.color;});
 
     var labels = svgContainer.selectAll('text')
       .data(data)

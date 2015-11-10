@@ -7,17 +7,17 @@
 {% endblock %}
 
 {% block content %}
-Hey it's the brand new power rankings!
+<h2 style='text-align: center'>
+2015-2016 NBA Power Rankings
+</h2>
 
 <div class="power_rankings">
 <div class="chart">
-  
+  <svg width='100%' height='600' id='nba-chart'>
+  </svg>
 </div>
 
 <script>
-build_chart(".power_rankings", {
-  plot: {width: 700, height: 500},
-  margin: {top: 30, left: 220, right: 40, bottom: 50}
-})
+build_chart('#nba-chart')
 </script>
 {% endblock %}
