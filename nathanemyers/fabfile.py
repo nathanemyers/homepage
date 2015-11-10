@@ -6,6 +6,7 @@ def deploy():
     deploy_dir = '/home/nathan/homepage/'
     local('./manage.py test')
     local('sass --update nathanemyers/sass:nathanemyers/static/css/')
+    local('find . -name "*.pyc" -exec rm -rf {} \;')
     run('mkdir -p ' + deploy_dir + 'nathanemyers/')
     run('mkdir -p ' + deploy_dir + 'nbapowerranks/')
     put('nathanemyers/*.py', deploy_dir + 'nathanemyers/' )
