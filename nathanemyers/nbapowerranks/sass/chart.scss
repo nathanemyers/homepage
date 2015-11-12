@@ -1,0 +1,313 @@
+$gray: #D3D3D3;
+$black: #000;
+$warriors: #FDB927;
+$bulls: #CE1141;
+$raptors: #CE1141;
+$cavaliers: #860038;
+$wizards: #002566;
+$heat: #98002E;
+$bucks: #00471B;
+$hawks: #E13A3E;
+$thunder: #007DC6;
+$kings: #724C9F;
+$rockets: #CE1141;
+$clippers: #006BB6;
+$lakers: #552582;
+$blazers: #B6BFBF;
+$mavericks: #007DC5;
+$spurs: #000000;
+$grizzlies: #002566;
+$nuggets: #FFB20F;
+$pacers: #00275D;
+$suns: #E56020;
+$pelicans: #001641;
+$magic: #007DC5;
+$nets: #000000;
+$celtics: #008348;
+$jazz: #002B5C;
+$timberwolves: #00A94F;
+$knicks: #F58426;
+$philly: #ED174C;
+$pistons: #ED174C;
+$hornets: #1D1160;
+
+.axis text {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+path.warriors {
+  stroke: $warriors;
+}
+circle.warriors {
+  fill: $warriors !important;
+}
+
+path.bulls {
+  stroke: $bulls;
+}
+circle.bulls {
+  fill: $bulls !important;
+}
+
+path.raptors {
+  stroke: $raptors;
+}
+circle.raptors {
+  fill: $raptors !important;
+}
+
+path.cavaliers {
+  stroke: $cavaliers;
+}
+circle.cavaliers {
+  fill: $cavaliers !important;
+}
+
+path.wizards {
+  stroke: $wizards;
+}
+circle.wizards {
+  fill: $wizards !important;
+}
+
+path.heat {
+  stroke: $heat;
+}
+circle.heat {
+  fill: $heat !important;
+}
+
+path.bucks {
+  stroke: $bucks;
+}
+circle.bucks {
+  fill: $bucks !important;
+}
+
+path.hawks {
+  stroke: $hawks;
+}
+circle.hawks {
+  fill: $hawks !important;
+}
+
+path.thunder {
+  stroke: $thunder;
+}
+circle.thunder {
+  fill: $thunder !important;
+}
+
+path.kings {
+  stroke: $kings;
+}
+circle.kings {
+  fill: $kings !important;
+}
+
+path.rockets {
+  stroke: $rockets;
+}
+circle.rockets {
+  fill: $rockets !important;
+}
+
+path.clippers {
+  stroke: $clippers;
+}
+circle.clippers {
+  fill: $clippers !important;
+}
+
+path.lakers {
+  stroke: $lakers;
+}
+circle.lakers {
+  fill: $lakers !important;
+}
+
+path.blazers {
+  stroke: $blazers;
+}
+circle.blazers {
+  fill: $blazers !important;
+}
+
+path.mavericks {
+  stroke: $mavericks;
+}
+circle.mavericks {
+  fill: $mavericks !important;
+}
+
+path.spurs {
+  stroke: $spurs;
+}
+circle.spurs {
+  fill: $spurs !important;
+}
+
+path.grizzlies {
+  stroke: $grizzlies;
+}
+circle.grizzlies {
+  fill: $grizzlies !important;
+}
+
+path.nuggets {
+  stroke: $nuggets;
+}
+circle.nuggets {
+  fill: $nuggets !important;
+}
+
+path.suns {
+  stroke: $suns;
+}
+circle.suns {
+  fill: $suns !important;
+}
+
+path.pacers {
+  stroke: $pacers;
+}
+circle.pacers {
+  fill: $pacers !important;
+}
+
+path.pelicans {
+  stroke: $pelicans;
+}
+circle.pelicans {
+  fill: $pelicans !important;
+}
+
+path.magic {
+  stroke: $magic;
+}
+circle.magic {
+  fill: $magic !important;
+}
+
+path.nets {
+  stroke: $nets;
+}
+circle.nets {
+  fill: $nets !important;
+}
+
+path.celtics {
+  stroke: $celtics;
+}
+circle.celtics {
+  fill: $celtics !important;
+}
+
+path.jazz {
+  stroke: $jazz;
+}
+circle.jazz {
+  fill: $jazz !important;
+}
+
+path.timberwolves {
+  stroke: $timberwolves;
+}
+circle.timberwolves {
+  fill: $timberwolves !important;
+}
+
+path.knicks {
+  stroke: $knicks;
+}
+circle.knicks {
+  fill: $knicks !important;
+}
+
+path.philly {
+  stroke: $philly;
+}
+circle.philly {
+  fill: $philly !important;
+}
+
+path.pistons {
+  stroke: $pistons;
+}
+circle.pistons {
+  fill: $pistons !important;
+}
+
+path.hornets {
+  stroke: $hornets;
+}
+circle.hornets {
+  fill: $hornets !important;
+}
+
+.fadewest {
+  path.western {
+    stroke: $gray;
+  }
+
+  circle.western {
+    fill: $gray !important;
+  }
+
+  text.western {
+    stroke: $gray;
+    fill: $gray; 
+  }
+}
+
+.fadeeast {
+  path.eastern {
+    stroke: $gray;
+  }
+
+  circle.eastern {
+    fill: $gray !important;
+  }
+
+  text.eastern {
+    stroke: $gray;
+    fill: $gray; 
+  }
+}
+
+.highlight {
+  path.team {
+    stroke: $gray;
+  }
+
+  circle.team {
+    fill: $gray !important;
+  }
+
+  text.team {
+    stroke: $gray;
+    fill: $gray; 
+  }
+}
+
+.highlight.pacers {
+  path.pacers {
+    stroke: $pacers;
+  }
+
+  circle.pacers {
+    fill: $pacers !important;
+  }
+
+  text.pacers {
+    stroke: $black;
+    fill: $black; 
+  }
+}

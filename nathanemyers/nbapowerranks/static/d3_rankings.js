@@ -1,4 +1,3 @@
-
 function build_chart(selector) {
   var border_left = 120;
   var border_right = 10;
@@ -33,12 +32,16 @@ function build_chart(selector) {
 
 
   var lineClass = function(data) {
+    var classes = 'team ';
+    // can't have a css class named 76ers
+    classes += data.name === '76ers' ? 'philly' : data.name;
       if (data.conference === 'Eastern') {
-        return 'eastern';
+        classes += ' eastern';
       }
       if (data.conference === 'Western') {
-        return 'western';
+        classes += ' western';
       }
+      return classes;
   };
 
   $.getJSON("/nba/api/rankings/2016", function(data) {
@@ -51,7 +54,6 @@ function build_chart(selector) {
       .data(data)
       .enter().append('path')
       .attr('d', function(d) { return line(d.rankings); })
-      .attr('stroke', function(d) {return d.color;})
       .attr('class', lineClass)
       .attr('fill', 'none')
       .attr('stroke-width', 2);
@@ -67,8 +69,7 @@ function build_chart(selector) {
         return y(d.rankings[d.rankings.length-1].rank);
       })
       .attr('r', '5')
-      .attr('class', lineClass)
-      .style('fill', function(d) {return d.color;});
+      .attr('class', lineClass);
 
     var labels = svgContainer.selectAll('text')
       .data(data)
@@ -95,4 +96,3 @@ function build_chart(selector) {
   });
 
 }
-
