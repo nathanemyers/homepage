@@ -81,6 +81,12 @@ function build_chart(selector) {
       })
       .attr('class', lineClass)
       .style('text-anchor', 'end')
+      .on('mouseenter', function(d) {
+        $('.chart').addClass('highlight ' + d.name);
+      })
+      .on('mouseout', function(d) {
+        $('.chart').removeClass('highlight ' + d.name);
+      })
       .text(function(d) {return d.name;});
 
     svgContainer.append('g')

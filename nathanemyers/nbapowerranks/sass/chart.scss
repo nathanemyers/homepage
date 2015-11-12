@@ -1,5 +1,11 @@
+$highlight-stroke-width: 3;
+$stroke-width: 2;
+$highlight-bubble-radius: 5;
+$bubble-radius: 3;
+
 $gray: #D3D3D3;
 $black: #000;
+
 $warriors: #FDB927;
 $bulls: #CE1141;
 $raptors: #CE1141;
@@ -297,17 +303,453 @@ circle.hornets {
   }
 }
 
+.highlight.warriors {
+  path.warriors {
+    stroke: $warriors;
+    stroke-width: $highlight-stroke-width;
+  }
+  circle.warriors {
+    fill: $warriors !important;
+    r: $highlight-bubble-radius;
+  }
+  text.warriors {
+    stroke: $black;
+    fill: $black; 
+  }
+}
+
+.highlight.bulls {
+  path.bulls {
+    stroke: $bulls;
+    stroke-width: $highlight-stroke-width;
+  }
+  circle.bulls {
+    fill: $bulls !important;
+    r: $highlight-bubble-radius;
+  }
+  text.bulls {
+    stroke: $black;
+    fill: $black; 
+  }
+}
+
+.highlight.raptors {
+  path.raptors {
+    stroke: $raptors;
+    stroke-width: $highlight-stroke-width;
+  }
+  circle.raptors {
+    fill: $raptors !important;
+    r: $highlight-bubble-radius;
+  }
+  text.raptors {
+    stroke: $black;
+    fill: $black; 
+  }
+}
+
+.highlight.cavaliers {
+  path.cavaliers {
+    stroke: $cavaliers;
+    stroke-width: $highlight-stroke-width;
+  }
+  circle.cavaliers {
+    fill: $cavaliers !important;
+    r: $highlight-bubble-radius;
+  }
+  text.cavaliers {
+    stroke: $black;
+    fill: $black; 
+  }
+}
+
+.highlight.wizards {
+  path.wizards {
+    stroke: $wizards;
+    stroke-width: $highlight-stroke-width;
+  }
+  circle.wizards {
+    fill: $wizards !important;
+    r: $highlight-bubble-radius;
+  }
+  text.wizards {
+    stroke: $black;
+    fill: $black; 
+  }
+}
+
+.highlight.heat {
+  path.heat {
+    stroke: $heat;
+    stroke-width: $highlight-stroke-width;
+  }
+  circle.heat {
+    fill: $heat !important;
+    r: $highlight-bubble-radius;
+  }
+  text.heat {
+    stroke: $black;
+    fill: $black; 
+  }
+}
+
+.highlight.bucks {
+  path.bucks {
+    stroke: $bucks;
+    stroke-width: $highlight-stroke-width;
+  }
+  circle.bucks {
+    fill: $bucks !important;
+    r: $highlight-bubble-radius;
+  }
+  text.bucks {
+    stroke: $black;
+    fill: $black; 
+  }
+}
+
+.highlight.hawks {
+  path.hawks {
+    stroke: $hawks;
+    stroke-width: $highlight-stroke-width;
+  }
+  circle.hawks {
+    fill: $hawks !important;
+    r: $highlight-bubble-radius;
+  }
+  text.hawks {
+    stroke: $black;
+    fill: $black; 
+  }
+}
+
+.highlight.thunder {
+  path.thunder {
+    stroke: $thunder;
+    stroke-width: $highlight-stroke-width;
+  }
+  circle.thunder {
+    fill: $thunder !important;
+    r: $highlight-bubble-radius;
+  }
+  text.thunder {
+    stroke: $black;
+    fill: $black; 
+  }
+}
+
+.highlight.kings {
+  path.kings {
+    stroke: $kings;
+    stroke-width: $highlight-stroke-width;
+  }
+  circle.kings {
+    fill: $kings !important;
+    r: $highlight-bubble-radius;
+  }
+  text.kings {
+    stroke: $black;
+    fill: $black; 
+  }
+}
+
+.highlight.rockets {
+  path.rockets {
+    stroke: $rockets;
+    stroke-width: $highlight-stroke-width;
+  }
+  circle.rockets {
+    fill: $rockets !important;
+    r: $highlight-bubble-radius;
+  }
+  text.rockets {
+    stroke: $black;
+    fill: $black; 
+  }
+}
+
+.highlight.clippers {
+  path.clippers {
+    stroke: $clippers;
+    stroke-width: $highlight-stroke-width;
+  }
+  circle.clippers {
+    fill: $clippers !important;
+    r: $highlight-bubble-radius;
+  }
+  text.clippers {
+    stroke: $black;
+    fill: $black; 
+  }
+}
+
+.highlight.lakers {
+  path.lakers {
+    stroke: $lakers;
+    stroke-width: $highlight-stroke-width;
+  }
+  circle.lakers {
+    fill: $lakers !important;
+    r: $highlight-bubble-radius;
+  }
+  text.lakers {
+    stroke: $black;
+    fill: $black; 
+  }
+}
+
+.highlight.blazers {
+  path.blazers {
+    stroke: $blazers;
+    stroke-width: $highlight-stroke-width;
+  }
+  circle.blazers {
+    fill: $blazers !important;
+    r: $highlight-bubble-radius;
+  }
+  text.blazers {
+    stroke: $black;
+    fill: $black; 
+  }
+}
+
+.highlight.mavericks {
+  path.mavericks {
+    stroke: $mavericks;
+    stroke-width: $highlight-stroke-width;
+  }
+  circle.mavericks {
+    fill: $mavericks !important;
+    r: $highlight-bubble-radius;
+  }
+  text.mavericks {
+    stroke: $black;
+    fill: $black; 
+  }
+}
+
+.highlight.spurs {
+  path.spurs {
+    stroke: $spurs;
+    stroke-width: $highlight-stroke-width;
+  }
+  circle.spurs {
+    fill: $spurs !important;
+    r: $highlight-bubble-radius;
+  }
+  text.spurs {
+    stroke: $black;
+    fill: $black; 
+  }
+}
+
+.highlight.grizzlies {
+  path.grizzlies {
+    stroke: $grizzlies;
+    stroke-width: $highlight-stroke-width;
+  }
+  circle.grizzlies {
+    fill: $grizzlies !important;
+    r: $highlight-bubble-radius;
+  }
+  text.grizzlies {
+    stroke: $black;
+    fill: $black; 
+  }
+}
+
+.highlight.nuggets {
+  path.nuggets {
+    stroke: $nuggets;
+    stroke-width: $highlight-stroke-width;
+  }
+  circle.nuggets {
+    fill: $nuggets !important;
+    r: $highlight-bubble-radius;
+  }
+  text.nuggets {
+    stroke: $black;
+    fill: $black; 
+  }
+}
+
 .highlight.pacers {
   path.pacers {
     stroke: $pacers;
+    stroke-width: $highlight-stroke-width;
   }
-
   circle.pacers {
     fill: $pacers !important;
+    r: $highlight-bubble-radius;
   }
-
   text.pacers {
     stroke: $black;
     fill: $black; 
   }
 }
+
+.highlight.suns {
+  path.suns {
+    stroke: $suns;
+    stroke-width: $highlight-stroke-width;
+  }
+  circle.suns {
+    fill: $suns !important;
+    r: $highlight-bubble-radius;
+  }
+  text.suns {
+    stroke: $black;
+    fill: $black; 
+  }
+}
+
+.highlight.pelicans {
+  path.pelicans {
+    stroke: $pelicans;
+    stroke-width: $highlight-stroke-width;
+  }
+  circle.pelicans {
+    fill: $pelicans !important;
+    r: $highlight-bubble-radius;
+  }
+  text.pelicans {
+    stroke: $black;
+    fill: $black; 
+  }
+}
+
+.highlight.magic {
+  path.magic {
+    stroke: $magic;
+    stroke-width: $highlight-stroke-width;
+  }
+  circle.magic {
+    fill: $magic !important;
+    r: $highlight-bubble-radius;
+  }
+  text.magic {
+    stroke: $black;
+    fill: $black; 
+  }
+}
+
+.highlight.nets {
+  path.nets {
+    stroke: $nets;
+    stroke-width: $highlight-stroke-width;
+  }
+  circle.nets {
+    fill: $nets !important;
+    r: $highlight-bubble-radius;
+  }
+  text.nets {
+    stroke: $black;
+    fill: $black; 
+  }
+}
+
+.highlight.celtics {
+  path.celtics {
+    stroke: $celtics;
+    stroke-width: $highlight-stroke-width;
+  }
+  circle.celtics {
+    fill: $celtics !important;
+    r: $highlight-bubble-radius;
+  }
+  text.celtics {
+    stroke: $black;
+    fill: $black; 
+  }
+}
+
+.highlight.jazz {
+  path.jazz {
+    stroke: $jazz;
+    stroke-width: $highlight-stroke-width;
+  }
+  circle.jazz {
+    fill: $jazz !important;
+    r: $highlight-bubble-radius;
+  }
+  text.jazz {
+    stroke: $black;
+    fill: $black; 
+  }
+}
+
+.highlight.timberwolves {
+  path.timberwolves {
+    stroke: $timberwolves;
+    stroke-width: $highlight-stroke-width;
+  }
+  circle.timberwolves {
+    fill: $timberwolves !important;
+    r: $highlight-bubble-radius;
+  }
+  text.timberwolves {
+    stroke: $black;
+    fill: $black; 
+  }
+}
+
+.highlight.knicks {
+  path.knicks {
+    stroke: $knicks;
+    stroke-width: $highlight-stroke-width;
+  }
+  circle.knicks {
+    fill: $knicks !important;
+    r: $highlight-bubble-radius;
+  }
+  text.knicks {
+    stroke: $black;
+    fill: $black; 
+  }
+}
+
+.highlight.philly {
+  path.philly {
+    stroke: $philly;
+    stroke-width: $highlight-stroke-width;
+  }
+  circle.philly {
+    fill: $philly !important;
+    r: $highlight-bubble-radius;
+  }
+  text.philly {
+    stroke: $black;
+    fill: $black; 
+  }
+}
+
+.highlight.pistons {
+  path.pistons {
+    stroke: $pistons;
+    stroke-width: $highlight-stroke-width;
+  }
+  circle.pistons {
+    fill: $pistons !important;
+    r: $highlight-bubble-radius;
+  }
+  text.pistons {
+    stroke: $black;
+    fill: $black; 
+  }
+}
+
+.highlight.hornets {
+  path.hornets {
+    stroke: $hornets;
+    stroke-width: $highlight-stroke-width;
+  }
+  circle.hornets {
+    fill: $hornets !important;
+    r: $highlight-bubble-radius;
+  }
+  text.hornets {
+    stroke: $black;
+    fill: $black; 
+  }
+}
+
