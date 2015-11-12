@@ -32,16 +32,30 @@ function build_chart(selector) {
     .scale(x);
 
 
+  var lineClass = function(data) {
+      if (data.conference === 'Eastern') {
+        return 'eastern';
+      }
+      if (data.conference === 'Western') {
+        return 'western';
+      }
+  };
+
   $.getJSON("/nba/api/rankings/2016", function(data) {
     data = data.results;
+    var black_warriors = function() {
+      data[0].color = '#000';
+    };
 
     var lines = svgContainer.selectAll('path')
       .data(data)
       .enter().append('path')
       .attr('d', function(d) { return line(d.rankings); })
       .attr('stroke', function(d) {return d.color;})
+      .attr('class', lineClass)
       .attr('fill', 'none')
       .attr('stroke-width', 2);
+
 
     var bubbles = svgContainer.selectAll('circle')
       .data(data)
@@ -52,7 +66,8 @@ function build_chart(selector) {
       .attr('cy', function(d) {
         return y(d.rankings[d.rankings.length-1].rank);
       })
-      .attr('r', '2')
+      .attr('r', '5')
+      .attr('class', lineClass)
       .style('fill', function(d) {return d.color;});
 
     var labels = svgContainer.selectAll('text')
@@ -63,6 +78,7 @@ function build_chart(selector) {
       .attr('y', function(d) {
         return y(d.rankings[0].rank) + 5; // +5 to center text
       })
+      .attr('class', lineClass)
       .style('text-anchor', 'end')
       .text(function(d) {return d.name;});
 

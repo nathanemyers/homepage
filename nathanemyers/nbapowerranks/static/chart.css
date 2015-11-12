@@ -8,3 +8,33 @@
   stroke: #000;
   shape-rendering: crispEdges;
 }
+
+.grayout {
+  fill: #333; !important
+}
+
+.fadewest path.western {
+  stroke: #D3D3D3;
+}
+
+.fadewest circle.western {
+  fill: #D3D3D3 !important;
+}
+
+.fadewest text.western {
+  stroke: #D3D3D3;
+  fill: #D3D3D3; 
+}
+
+.fadeeast path.eastern {
+  stroke: #D3D3D3;
+}
+
+.fadeeast circle.eastern {
+  fill: #D3D3D3 !important;
+}
+
+.fadeeast text.eastern {
+  stroke: #D3D3D3;
+  fill: #D3D3D3; 
+}
