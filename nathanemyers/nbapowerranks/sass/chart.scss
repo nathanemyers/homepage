@@ -61,9 +61,15 @@ $hornets: #1D1160;
   stroke-width: $stroke-width;
   fill: none;
 }
+
+@mixin transition {
+  transition: all .1s ease-in-out;
+}
+
 path.warriors {
   stroke: $warriors;
   @include line();
+  @include transition();
 }
 circle.warriors {
   fill: $warriors !important;
@@ -72,6 +78,7 @@ circle.warriors {
 path.bulls {
   stroke: $bulls;
   @include line();
+  @include transition();
 }
 circle.bulls {
   fill: $bulls !important;
@@ -80,6 +87,7 @@ circle.bulls {
 path.raptors {
   stroke: $raptors;
   @include line();
+  @include transition();
 }
 circle.raptors {
   fill: $raptors !important;
@@ -88,6 +96,7 @@ circle.raptors {
 path.cavaliers {
   stroke: $cavaliers;
   @include line();
+  @include transition();
 }
 circle.cavaliers {
   fill: $cavaliers !important;
@@ -96,6 +105,7 @@ circle.cavaliers {
 path.wizards {
   stroke: $wizards;
   @include line();
+  @include transition();
 }
 circle.wizards {
   fill: $wizards !important;
@@ -104,6 +114,7 @@ circle.wizards {
 path.heat {
   stroke: $heat;
   @include line();
+  @include transition();
 }
 circle.heat {
   fill: $heat !important;
@@ -112,6 +123,7 @@ circle.heat {
 path.bucks {
   stroke: $bucks;
   @include line();
+  @include transition();
 }
 circle.bucks {
   fill: $bucks !important;
@@ -120,6 +132,7 @@ circle.bucks {
 path.hawks {
   stroke: $hawks;
   @include line();
+  @include transition();
 }
 circle.hawks {
   fill: $hawks !important;
@@ -128,6 +141,7 @@ circle.hawks {
 path.thunder {
   stroke: $thunder;
   @include line();
+  @include transition();
 }
 circle.thunder {
   fill: $thunder !important;
@@ -136,6 +150,7 @@ circle.thunder {
 path.kings {
   stroke: $kings;
   @include line();
+  @include transition();
 }
 circle.kings {
   fill: $kings !important;
@@ -144,6 +159,7 @@ circle.kings {
 path.rockets {
   stroke: $rockets;
   @include line();
+  @include transition();
 }
 circle.rockets {
   fill: $rockets !important;
@@ -152,6 +168,7 @@ circle.rockets {
 path.clippers {
   stroke: $clippers;
   @include line();
+  @include transition();
 }
 circle.clippers {
   fill: $clippers !important;
@@ -160,6 +177,7 @@ circle.clippers {
 path.lakers {
   stroke: $lakers;
   @include line();
+  @include transition();
 }
 circle.lakers {
   fill: $lakers !important;
@@ -168,6 +186,7 @@ circle.lakers {
 path.blazers {
   stroke: $blazers;
   @include line();
+  @include transition();
 }
 circle.blazers {
   fill: $blazers !important;
@@ -176,6 +195,7 @@ circle.blazers {
 path.mavericks {
   stroke: $mavericks;
   @include line();
+  @include transition();
 }
 circle.mavericks {
   fill: $mavericks !important;
@@ -184,6 +204,7 @@ circle.mavericks {
 path.spurs {
   stroke: $spurs;
   @include line();
+  @include transition();
 }
 circle.spurs {
   fill: $spurs !important;
@@ -192,6 +213,7 @@ circle.spurs {
 path.grizzlies {
   stroke: $grizzlies;
   @include line();
+  @include transition();
 }
 circle.grizzlies {
   fill: $grizzlies !important;
@@ -200,6 +222,7 @@ circle.grizzlies {
 path.nuggets {
   stroke: $nuggets;
   @include line();
+  @include transition();
 }
 circle.nuggets {
   fill: $nuggets !important;
@@ -208,6 +231,7 @@ circle.nuggets {
 path.suns {
   stroke: $suns;
   @include line();
+  @include transition();
 }
 circle.suns {
   fill: $suns !important;
@@ -216,6 +240,7 @@ circle.suns {
 path.pacers {
   stroke: $pacers;
   @include line();
+  @include transition();
 }
 circle.pacers {
   fill: $pacers !important;
@@ -224,6 +249,7 @@ circle.pacers {
 path.pelicans {
   stroke: $pelicans;
   @include line();
+  @include transition();
 }
 circle.pelicans {
   fill: $pelicans !important;
@@ -232,6 +258,7 @@ circle.pelicans {
 path.magic {
   stroke: $magic;
   @include line();
+  @include transition();
 }
 circle.magic {
   fill: $magic !important;
@@ -240,6 +267,7 @@ circle.magic {
 path.nets {
   stroke: $nets;
   @include line();
+  @include transition();
 }
 circle.nets {
   fill: $nets !important;
@@ -248,6 +276,7 @@ circle.nets {
 path.celtics {
   stroke: $celtics;
   @include line();
+  @include transition();
 }
 circle.celtics {
   fill: $celtics !important;
@@ -256,6 +285,7 @@ circle.celtics {
 path.jazz {
   stroke: $jazz;
   @include line();
+  @include transition();
 }
 circle.jazz {
   fill: $jazz !important;
@@ -264,6 +294,7 @@ circle.jazz {
 path.timberwolves {
   stroke: $timberwolves;
   @include line();
+  @include transition();
 }
 circle.timberwolves {
   fill: $timberwolves !important;
@@ -272,6 +303,7 @@ circle.timberwolves {
 path.knicks {
   stroke: $knicks;
   @include line();
+  @include transition();
 }
 circle.knicks {
   fill: $knicks !important;
@@ -280,6 +312,7 @@ circle.knicks {
 path.philly {
   stroke: $philly;
   @include line();
+  @include transition();
 }
 circle.philly {
   fill: $philly !important;
@@ -288,6 +321,7 @@ circle.philly {
 path.pistons {
   stroke: $pistons;
   @include line();
+  @include transition();
 }
 circle.pistons {
   fill: $pistons !important;
@@ -296,6 +330,7 @@ circle.pistons {
 path.hornets {
   stroke: $hornets;
   @include line();
+  @include transition();
 }
 circle.hornets {
   fill: $hornets !important;
@@ -338,11 +373,13 @@ circle.hornets {
 
   circle.team {
     fill: $gray !important;
+    @include transition();
   }
 
   text.team {
     stroke: $gray;
     fill: $gray; 
+    @include transition();
   }
 }
 
