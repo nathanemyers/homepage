@@ -55,7 +55,8 @@ body {
   margin: 8px; }
   @media (min-width: 600px) {
     .main-container {
-      margin: 0 10% 20px; } }
+      max-width: 900px;
+      margin: 0 auto 20px; } }
 
 .main {
   background-color: #E8E8E8;
@@ -72,24 +73,33 @@ body {
   margin-top: .5em; }
   @media (min-width: 600px) {
     .footer-container {
-      height: 150px; } }
-
-.footer-content {
-  display: inline-block;
-  vertical-align: top;
-  width: 60%;
-  color: #F9F9F9; }
+      height: 100px; } }
+  .footer-container a {
+    color: #9ABFD6; }
+  .footer-container a:hover {
+    color: #5191b9; }
 
 @media (min-width: 600px) {
   .footer {
-    margin: 0 10%; } }
+    width: 900px;
+    margin: 0 auto;
+    height: 100px; } }
 
 .profile-pic {
+  display: inline-block;
   margin: 0 4%;
-  border-radius: 50%;
-  width: 30%; }
-  @media (min-width: 600px) {
-    .profile-pic {
-      width: 150px; } }
+  height: 100px;
+  width: 100px;
+  float: left; }
+  .profile-pic img {
+    border-radius: 50%;
+    height: 100px;
+    border: 1px solid black; }
+
+.footer-content {
+  vertical-align: top;
+  color: #F9F9F9;
+  width: auto;
+  overflow: hidden; }
 
 /*# sourceMappingURL=base.css.map */

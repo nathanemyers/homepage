@@ -25,3 +25,5 @@ def deploy():
     run('sudo python ' + deploy_dir + 'manage.py collectstatic')
     run('sudo service apache2 restart')
 
+def sass():
+    local('sass --watch nbapowerranks/sass:nbapowerranks/static')
