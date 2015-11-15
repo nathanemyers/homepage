@@ -1,8 +1,9 @@
 @import '_variables.scss';
 
+$footer-link-color: #9ABFD6; 
 body {
-  /*background: url(/static/images/grey-prism.svg) center;*/
-  background: linear-gradient(to right, #D3E8CF, #9ABFD6);
+  background: url(/static/images/grey-prism.svg) center;
+  /*background: linear-gradient(to right, #D3E8CF, #9ABFD6);*/
   margin: 0;
   font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica';
 
@@ -100,29 +101,41 @@ body {
   margin-top: .5em;
 
   @media (min-width: $mobile-width) {
-    height: 150px; 
+    height: 100px; 
+  }
+
+  a {
+    color: $footer-link-color;
+  }
+  a:hover {
+    color: darken($footer-link-color, 20%);
   }
 }
 
-.footer-content {
-  display: inline-block;
-  vertical-align: top;
-  width: 60%;
-  color: #F9F9F9;
-}
 
 .footer {
   @media (min-width: $mobile-width) {
     margin: 0 $desktop-gutter;
+    height: 100px;
   }
 }
 
 .profile-pic {
+  display: inline-block;
   margin: 0 4%;
-  border-radius: 50%;
-  width: 30%;
+  height: 100px;
+  width: 100px;
+  float: left;
 
-  @media (min-width: $mobile-width) {
-    width: 150px;
+  img {
+    border-radius: 50%;
+    height: 100px;
   }
+}
+
+.footer-content {
+  vertical-align: top;
+  color: #F9F9F9;
+  width: auto;
+  overflow: hidden;
 }
