@@ -41,6 +41,10 @@ $hornets: #1D1160;
   font: 10px sans-serif;
 }
 
+text.team {
+  cursor: default;
+}
+
 .axis path,
 .axis line {
   fill: none;
@@ -376,11 +380,6 @@ circle.hornets {
     @include transition();
   }
 
-  text.team {
-    stroke: $gray;
-    fill: $gray; 
-    @include transition();
-  }
 }
 
 .highlight.warriors {
