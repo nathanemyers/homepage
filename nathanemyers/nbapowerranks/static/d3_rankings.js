@@ -51,6 +51,14 @@ function build_chart(selector) {
       return classes;
   };
 
+  var tooltip = d3.tip()
+    .attr('class', 'd3-tip')
+    .offset([-10, 0])
+    .html(function(d) {
+      return d.summary;
+    });
+  svgContainer.call(tooltip);
+
   $.getJSON("/nba/api/rankings/2016", function(data) {
     data = data.results;
     var black_warriors = function() {
@@ -89,9 +97,11 @@ function build_chart(selector) {
         })
         .on('mouseenter', function(d) {
           $('.chart').addClass('highlight ' + team2class(d.name));
+          tooltip.show(d.rankings[d.rankings.length-1]);
         })
         .on('mouseout', function(d) {
           $('.chart').removeClass('highlight ' + team2class(d.name));
+          tooltip.hide(d);
         })
         .attr('r', '4')
         .attr('class', lineClass);

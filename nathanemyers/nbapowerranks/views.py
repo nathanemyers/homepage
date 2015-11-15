@@ -26,11 +26,13 @@ def year_rankings(request, year):
             formatted_rankings[rank.team.name].append({
                 'week': rank.week,
                 'rank': rank.rank,
+                'summary': rank.summary,
                 })
         else:
             formatted_rankings[rank.team.name] = [{
                 'week': rank.week,
                 'rank': rank.rank,
+                'summary': rank.summary,
                 }]
 
     list_rankings = []
