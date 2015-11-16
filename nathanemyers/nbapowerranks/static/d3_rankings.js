@@ -32,11 +32,7 @@ function build_chart(selector) {
 
   // can't have a css class named 76ers
   var team2class = function(team) {
-    if (team === '76ers') {
-      return 'philly';
-    } else {
-      return team;
-    }
+    return (team === '76ers') ? 'philly' : team;
   };
 
   var lineClass = function(data) {
@@ -65,50 +61,17 @@ function build_chart(selector) {
       data[0].color = '#000';
     };
 
+
     var team_lines = svgContainer.selectAll('g')
       .data(data)
-      .enter().append('g');
+      .enter().append('g')
+        .attr('class', lineClass);
 
     var color_lines = team_lines
       .append('path')
-        .attr('d', function(d) { return line(d.rankings); })
-        .attr('class', lineClass);
+        .attr('d', function(d) { return line(d.rankings); });
 
-    var line_handles = team_lines
-      .append('path')
-        .attr('d', function(d) { return line(d.rankings); })
-        .attr('class', 'line-handle')
-        .on('mouseenter', function(d) {
-          $('.chart').addClass('highlight ' + team2class(d.name));
-        })
-        .on('mouseout', function(d) {
-          $('.chart').removeClass('highlight ' + team2class(d.name));
-        });
-
-
-    var bubbles = svgContainer.selectAll('circle')
-      .data(data)
-      .enter().append('circle')
-        .attr('cx', function(d) {
-          return x(d.rankings[d.rankings.length-1].week);
-        })
-        .attr('cy', function(d) {
-          return y(d.rankings[d.rankings.length-1].rank);
-        })
-        .on('mouseenter', function(d) {
-          $('.chart').addClass('highlight ' + team2class(d.name));
-          tooltip.show(d.rankings[d.rankings.length-1]);
-        })
-        .on('mouseout', function(d) {
-          $('.chart').removeClass('highlight ' + team2class(d.name));
-          tooltip.hide(d);
-        })
-        .attr('r', '4')
-        .attr('class', lineClass);
-
-    var labels = svgContainer.selectAll('text')
-      .data(data)
-      .enter()
+    var labels = team_lines
       .append('text')
         .attr('x', function(d) {return border_left - 5;}) // -5 to add margin
         .attr('y', function(d) {
@@ -116,13 +79,62 @@ function build_chart(selector) {
         })
         .attr('class', lineClass)
         .style('text-anchor', 'end')
+        .text(function(d) {return d.name;});
+
+    var bubbles = team_lines.selectAll('circle')
+      .data(function(d) {return d.rankings;})
+      .enter().append('circle')
+        .attr('cx', function(d) {
+          return x(d.week);
+        })
+        .attr('cy', function(d) {
+          return y(d.rank);
+        })
+        .attr('r', '8')
+        .style('fill', 'none');
+        
+
+    // This grouping is for all mouse related callbacks, contains a bunch of
+    // fat lines and circles layered over the colored display versions.
+    // We have to declare this stuff after the colored lines so they'll take
+    // precidence in the DOM
+    var line_handles = svgContainer.selectAll('.line-handle')
+      .data(data)
+      .enter().append('g');
+
+    line_handles
+      .append('path')
+      .attr('d', function(d) { return line(d.rankings); })
+      .attr('class', 'line-handle')
+      .on('mouseenter', function(d) {
+        $('.chart').addClass('highlight ' + team2class(d.name));
+      })
+      .on('mouseout', function(d) {
+        $('.chart').removeClass('highlight ' + team2class(d.name));
+      });
+        
+    line_handles.selectAll('circle')
+      .data(function(d) {return d.rankings;})
+      .enter().append('circle')
+        .attr('cx', function(d) {
+          return x(d.week);
+        })
+        .attr('cy', function(d) {
+          return y(d.rank);
+        })
+        .attr('r', '6')
+        .style('fill', 'red')
+        .style('opacity', '0')
         .on('mouseenter', function(d) {
-          $('.chart').addClass('highlight ' + team2class(d.name));
+          var name = d3.select(this.parentNode).datum().name;
+          $('.chart').addClass('highlight ' + team2class(name));
+          tooltip.show(d);
         })
         .on('mouseout', function(d) {
-          $('.chart').removeClass('highlight ' + team2class(d.name));
-        })
-        .text(function(d) {return d.name;});
+          var name = d3.select(this.parentNode).datum().name;
+          $('.chart').removeClass('highlight ' + team2class(name));
+          tooltip.hide();
+        });
 
     svgContainer.append('g')
       .attr('class', 'axis')

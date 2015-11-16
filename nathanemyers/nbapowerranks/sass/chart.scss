@@ -84,783 +84,315 @@ text.team {
   shape-rendering: crispEdges;
 }
 
+.highlight g.team path {
+    stroke: $gray;
+}
+
 // this is the thick invisible line that overlays
 // all the colored lines which handles the mouse events
-.line-handle {
-  stroke-width: 6;
+path.line-handle {
+  stroke-width: 10;
   fill: none;
   stroke: red;
   opacity: 0;
-}
-
-@mixin line {
-  stroke-width: $stroke-width;
-  fill: none;
 }
 
 @mixin transition {
   transition: all .1s ease-in-out;
 }
 
-path.warriors {
-  stroke: $warriors;
-  @include line();
-  @include transition();
-}
-circle.warriors {
-  fill: $warriors !important;
-}
-
-path.bulls {
-  stroke: $bulls;
-  @include line();
-  @include transition();
-}
-circle.bulls {
-  fill: $bulls !important;
-}
-
-path.raptors {
-  stroke: $raptors;
-  @include line();
-  @include transition();
-}
-circle.raptors {
-  fill: $raptors !important;
-}
-
-path.cavaliers {
-  stroke: $cavaliers;
-  @include line();
-  @include transition();
-}
-circle.cavaliers {
-  fill: $cavaliers !important;
-}
-
-path.wizards {
-  stroke: $wizards;
-  @include line();
-  @include transition();
-}
-circle.wizards {
-  fill: $wizards !important;
-}
-
-path.heat {
-  stroke: $heat;
-  @include line();
-  @include transition();
-}
-circle.heat {
-  fill: $heat !important;
-}
-
-path.bucks {
-  stroke: $bucks;
-  @include line();
-  @include transition();
-}
-circle.bucks {
-  fill: $bucks !important;
-}
-
-path.hawks {
-  stroke: $hawks;
-  @include line();
-  @include transition();
-}
-circle.hawks {
-  fill: $hawks !important;
-}
-
-path.thunder {
-  stroke: $thunder;
-  @include line();
-  @include transition();
-}
-circle.thunder {
-  fill: $thunder !important;
-}
-
-path.kings {
-  stroke: $kings;
-  @include line();
-  @include transition();
-}
-circle.kings {
-  fill: $kings !important;
-}
-
-path.rockets {
-  stroke: $rockets;
-  @include line();
-  @include transition();
-}
-circle.rockets {
-  fill: $rockets !important;
-}
-
-path.clippers {
-  stroke: $clippers;
-  @include line();
-  @include transition();
-}
-circle.clippers {
-  fill: $clippers !important;
-}
-
-path.lakers {
-  stroke: $lakers;
-  @include line();
-  @include transition();
-}
-circle.lakers {
-  fill: $lakers !important;
-}
-
-path.blazers {
-  stroke: $blazers;
-  @include line();
-  @include transition();
-}
-circle.blazers {
-  fill: $blazers !important;
-}
-
-path.mavericks {
-  stroke: $mavericks;
-  @include line();
-  @include transition();
-}
-circle.mavericks {
-  fill: $mavericks !important;
-}
-
-path.spurs {
-  stroke: $spurs;
-  @include line();
-  @include transition();
-}
-circle.spurs {
-  fill: $spurs !important;
-}
-
-path.grizzlies {
-  stroke: $grizzlies;
-  @include line();
-  @include transition();
-}
-circle.grizzlies {
-  fill: $grizzlies !important;
-}
-
-path.nuggets {
-  stroke: $nuggets;
-  @include line();
-  @include transition();
-}
-circle.nuggets {
-  fill: $nuggets !important;
-}
-
-path.suns {
-  stroke: $suns;
-  @include line();
-  @include transition();
-}
-circle.suns {
-  fill: $suns !important;
-}
-
-path.pacers {
-  stroke: $pacers;
-  @include line();
-  @include transition();
-}
-circle.pacers {
-  fill: $pacers !important;
-}
-
-path.pelicans {
-  stroke: $pelicans;
-  @include line();
-  @include transition();
-}
-circle.pelicans {
-  fill: $pelicans !important;
-}
-
-path.magic {
-  stroke: $magic;
-  @include line();
-  @include transition();
-}
-circle.magic {
-  fill: $magic !important;
-}
-
-path.nets {
-  stroke: $nets;
-  @include line();
-  @include transition();
-}
-circle.nets {
-  fill: $nets !important;
-}
-
-path.celtics {
-  stroke: $celtics;
-  @include line();
-  @include transition();
-}
-circle.celtics {
-  fill: $celtics !important;
-}
-
-path.jazz {
-  stroke: $jazz;
-  @include line();
-  @include transition();
-}
-circle.jazz {
-  fill: $jazz !important;
-}
-
-path.timberwolves {
-  stroke: $timberwolves;
-  @include line();
-  @include transition();
-}
-circle.timberwolves {
-  fill: $timberwolves !important;
-}
-
-path.knicks {
-  stroke: $knicks;
-  @include line();
-  @include transition();
-}
-circle.knicks {
-  fill: $knicks !important;
-}
-
-path.philly {
-  stroke: $philly;
-  @include line();
-  @include transition();
-}
-circle.philly {
-  fill: $philly !important;
-}
-
-path.pistons {
-  stroke: $pistons;
-  @include line();
-  @include transition();
-}
-circle.pistons {
-  fill: $pistons !important;
-}
-
-path.hornets {
-  stroke: $hornets;
-  @include line();
-  @include transition();
-}
-circle.hornets {
-  fill: $hornets !important;
-}
-
-.fadewest {
-  path.western {
-    stroke: $gray;
-  }
-
-  circle.western {
-    fill: $gray !important;
-  }
-
-  text.western {
-    stroke: $gray;
-    fill: $gray; 
-  }
-}
-
-.fadeeast {
-  path.eastern {
-    stroke: $gray;
-  }
-
-  circle.eastern {
-    fill: $gray !important;
-  }
-
-  text.eastern {
-    stroke: $gray;
-    fill: $gray; 
-  }
-}
-
-.highlight {
-  path.team {
-    stroke: $gray;
-  }
-
-  circle.team {
-    fill: $gray !important;
+@mixin normal-line($team) {
+  path {
+    stroke: $team;
+    stroke-width: $stroke-width;
+    fill: none;
     @include transition();
   }
 
+
 }
 
+@mixin highlight-line($team) {
+    path {
+      stroke: $team;
+      stroke-width: $highlight-stroke-width;
+    }
+    circle {
+      fill: $team !important;
+      r: $highlight-bubble-radius;
+    }
+    text {
+      stroke: $black;
+      fill: $black; 
+    }
+}
+
+g.warriors {
+  @include normal-line($warriors)
+}
 .highlight.warriors {
-  path.warriors {
-    stroke: $warriors;
-    stroke-width: $highlight-stroke-width;
-  }
-  circle.warriors {
-    fill: $warriors !important;
-    r: $highlight-bubble-radius;
-  }
-  text.warriors {
-    stroke: $black;
-    fill: $black; 
+  g.warriors {
+    @include highlight-line($warriors)
   }
 }
 
-.highlight.bulls {
-  path.bulls {
-    stroke: $bulls;
-    stroke-width: $highlight-stroke-width;
-  }
-  circle.bulls {
-    fill: $bulls !important;
-    r: $highlight-bubble-radius;
-  }
-  text.bulls {
-    stroke: $black;
-    fill: $black; 
-  }
+g.cavaliers {
+  @include normal-line($cavaliers)
 }
-
-.highlight.raptors {
-  path.raptors {
-    stroke: $raptors;
-    stroke-width: $highlight-stroke-width;
-  }
-  circle.raptors {
-    fill: $raptors !important;
-    r: $highlight-bubble-radius;
-  }
-  text.raptors {
-    stroke: $black;
-    fill: $black; 
-  }
-}
-
 .highlight.cavaliers {
-  path.cavaliers {
-    stroke: $cavaliers;
-    stroke-width: $highlight-stroke-width;
-  }
-  circle.cavaliers {
-    fill: $cavaliers !important;
-    r: $highlight-bubble-radius;
-  }
-  text.cavaliers {
-    stroke: $black;
-    fill: $black; 
+  g.cavaliers {
+    @include highlight-line($cavaliers)
   }
 }
 
-.highlight.wizards {
-  path.wizards {
-    stroke: $wizards;
-    stroke-width: $highlight-stroke-width;
-  }
-  circle.wizards {
-    fill: $wizards !important;
-    r: $highlight-bubble-radius;
-  }
-  text.wizards {
-    stroke: $black;
-    fill: $black; 
-  }
+g.spurs {
+  @include normal-line($spurs)
 }
-
-.highlight.heat {
-  path.heat {
-    stroke: $heat;
-    stroke-width: $highlight-stroke-width;
-  }
-  circle.heat {
-    fill: $heat !important;
-    r: $highlight-bubble-radius;
-  }
-  text.heat {
-    stroke: $black;
-    fill: $black; 
-  }
-}
-
-.highlight.bucks {
-  path.bucks {
-    stroke: $bucks;
-    stroke-width: $highlight-stroke-width;
-  }
-  circle.bucks {
-    fill: $bucks !important;
-    r: $highlight-bubble-radius;
-  }
-  text.bucks {
-    stroke: $black;
-    fill: $black; 
-  }
-}
-
-.highlight.hawks {
-  path.hawks {
-    stroke: $hawks;
-    stroke-width: $highlight-stroke-width;
-  }
-  circle.hawks {
-    fill: $hawks !important;
-    r: $highlight-bubble-radius;
-  }
-  text.hawks {
-    stroke: $black;
-    fill: $black; 
-  }
-}
-
-.highlight.thunder {
-  path.thunder {
-    stroke: $thunder;
-    stroke-width: $highlight-stroke-width;
-  }
-  circle.thunder {
-    fill: $thunder !important;
-    r: $highlight-bubble-radius;
-  }
-  text.thunder {
-    stroke: $black;
-    fill: $black; 
-  }
-}
-
-.highlight.kings {
-  path.kings {
-    stroke: $kings;
-    stroke-width: $highlight-stroke-width;
-  }
-  circle.kings {
-    fill: $kings !important;
-    r: $highlight-bubble-radius;
-  }
-  text.kings {
-    stroke: $black;
-    fill: $black; 
-  }
-}
-
-.highlight.rockets {
-  path.rockets {
-    stroke: $rockets;
-    stroke-width: $highlight-stroke-width;
-  }
-  circle.rockets {
-    fill: $rockets !important;
-    r: $highlight-bubble-radius;
-  }
-  text.rockets {
-    stroke: $black;
-    fill: $black; 
-  }
-}
-
-.highlight.clippers {
-  path.clippers {
-    stroke: $clippers;
-    stroke-width: $highlight-stroke-width;
-  }
-  circle.clippers {
-    fill: $clippers !important;
-    r: $highlight-bubble-radius;
-  }
-  text.clippers {
-    stroke: $black;
-    fill: $black; 
-  }
-}
-
-.highlight.lakers {
-  path.lakers {
-    stroke: $lakers;
-    stroke-width: $highlight-stroke-width;
-  }
-  circle.lakers {
-    fill: $lakers !important;
-    r: $highlight-bubble-radius;
-  }
-  text.lakers {
-    stroke: $black;
-    fill: $black; 
-  }
-}
-
-.highlight.blazers {
-  path.blazers {
-    stroke: $blazers;
-    stroke-width: $highlight-stroke-width;
-  }
-  circle.blazers {
-    fill: $blazers !important;
-    r: $highlight-bubble-radius;
-  }
-  text.blazers {
-    stroke: $black;
-    fill: $black; 
-  }
-}
-
-.highlight.mavericks {
-  path.mavericks {
-    stroke: $mavericks;
-    stroke-width: $highlight-stroke-width;
-  }
-  circle.mavericks {
-    fill: $mavericks !important;
-    r: $highlight-bubble-radius;
-  }
-  text.mavericks {
-    stroke: $black;
-    fill: $black; 
-  }
-}
-
 .highlight.spurs {
-  path.spurs {
-    stroke: $spurs;
-    stroke-width: $highlight-stroke-width;
-  }
-  circle.spurs {
-    fill: $spurs !important;
-    r: $highlight-bubble-radius;
-  }
-  text.spurs {
-    stroke: $black;
-    fill: $black; 
+  g.spurs {
+    @include highlight-line($spurs)
   }
 }
 
+g.thunder {
+  @include normal-line($thunder)
+}
+.highlight.thunder {
+  g.thunder {
+    @include highlight-line($thunder)
+  }
+}
+
+g.rockets {
+  @include normal-line($rockets)
+}
+.highlight.rockets {
+  g.rockets {
+    @include highlight-line($rockets)
+  }
+}
+
+g.clippers {
+  @include normal-line($clippers)
+}
+.highlight.clippers {
+  g.clippers {
+    @include highlight-line($clippers)
+  }
+}
+
+g.grizzlies {
+  @include normal-line($grizzlies)
+}
 .highlight.grizzlies {
-  path.grizzlies {
-    stroke: $grizzlies;
-    stroke-width: $highlight-stroke-width;
-  }
-  circle.grizzlies {
-    fill: $grizzlies !important;
-    r: $highlight-bubble-radius;
-  }
-  text.grizzlies {
-    stroke: $black;
-    fill: $black; 
+  g.grizzlies {
+    @include highlight-line($grizzlies)
   }
 }
 
-.highlight.nuggets {
-  path.nuggets {
-    stroke: $nuggets;
-    stroke-width: $highlight-stroke-width;
-  }
-  circle.nuggets {
-    fill: $nuggets !important;
-    r: $highlight-bubble-radius;
-  }
-  text.nuggets {
-    stroke: $black;
-    fill: $black; 
+g.hawks {
+  @include normal-line($hawks)
+}
+.highlight.hawks {
+  g.hawks {
+    @include highlight-line($hawks)
   }
 }
 
-.highlight.pacers {
-  path.pacers {
-    stroke: $pacers;
-    stroke-width: $highlight-stroke-width;
-  }
-  circle.pacers {
-    fill: $pacers !important;
-    r: $highlight-bubble-radius;
-  }
-  text.pacers {
-    stroke: $black;
-    fill: $black; 
+g.heat {
+  @include normal-line($heat)
+}
+.highlight.heat {
+  g.heat {
+    @include highlight-line($heat)
   }
 }
 
-.highlight.suns {
-  path.suns {
-    stroke: $suns;
-    stroke-width: $highlight-stroke-width;
-  }
-  circle.suns {
-    fill: $suns !important;
-    r: $highlight-bubble-radius;
-  }
-  text.suns {
-    stroke: $black;
-    fill: $black; 
+g.bulls {
+  @include normal-line($bulls)
+}
+.highlight.bulls {
+  g.bulls {
+    @include highlight-line($bulls)
   }
 }
 
+g.pelicans {
+  @include normal-line($pelicans)
+}
 .highlight.pelicans {
-  path.pelicans {
-    stroke: $pelicans;
-    stroke-width: $highlight-stroke-width;
-  }
-  circle.pelicans {
-    fill: $pelicans !important;
-    r: $highlight-bubble-radius;
-  }
-  text.pelicans {
-    stroke: $black;
-    fill: $black; 
+  g.pelicans {
+    @include highlight-line($pelicans)
   }
 }
 
-.highlight.magic {
-  path.magic {
-    stroke: $magic;
-    stroke-width: $highlight-stroke-width;
-  }
-  circle.magic {
-    fill: $magic !important;
-    r: $highlight-bubble-radius;
-  }
-  text.magic {
-    stroke: $black;
-    fill: $black; 
+g.raptors {
+  @include normal-line($raptors)
+}
+.highlight.raptors {
+  g.raptors {
+    @include highlight-line($raptors)
   }
 }
 
-.highlight.nets {
-  path.nets {
-    stroke: $nets;
-    stroke-width: $highlight-stroke-width;
-  }
-  circle.nets {
-    fill: $nets !important;
-    r: $highlight-bubble-radius;
-  }
-  text.nets {
-    stroke: $black;
-    fill: $black; 
-  }
+g.celtics {
+  @include normal-line($celtics)
 }
-
 .highlight.celtics {
-  path.celtics {
-    stroke: $celtics;
-    stroke-width: $highlight-stroke-width;
-  }
-  circle.celtics {
-    fill: $celtics !important;
-    r: $highlight-bubble-radius;
-  }
-  text.celtics {
-    stroke: $black;
-    fill: $black; 
+  g.celtics {
+    @include highlight-line($celtics)
   }
 }
 
-.highlight.jazz {
-  path.jazz {
-    stroke: $jazz;
-    stroke-width: $highlight-stroke-width;
-  }
-  circle.jazz {
-    fill: $jazz !important;
-    r: $highlight-bubble-radius;
-  }
-  text.jazz {
-    stroke: $black;
-    fill: $black; 
+g.bucks {
+  @include normal-line($bucks)
+}
+.highlight.bucks {
+  g.bucks {
+    @include highlight-line($bucks)
   }
 }
 
-.highlight.timberwolves {
-  path.timberwolves {
-    stroke: $timberwolves;
-    stroke-width: $highlight-stroke-width;
-  }
-  circle.timberwolves {
-    fill: $timberwolves !important;
-    r: $highlight-bubble-radius;
-  }
-  text.timberwolves {
-    stroke: $black;
-    fill: $black; 
+g.wizards {
+  @include normal-line($wizards)
+}
+.highlight.wizards {
+  g.wizards {
+    @include highlight-line($wizards)
   }
 }
 
-.highlight.knicks {
-  path.knicks {
-    stroke: $knicks;
-    stroke-width: $highlight-stroke-width;
-  }
-  circle.knicks {
-    fill: $knicks !important;
-    r: $highlight-bubble-radius;
-  }
-  text.knicks {
-    stroke: $black;
-    fill: $black; 
+g.pacers {
+  @include normal-line($pacers)
+}
+.highlight.pacers {
+  g.pacers {
+    @include highlight-line($pacers)
   }
 }
 
-.highlight.philly {
-  path.philly {
-    stroke: $philly;
-    stroke-width: $highlight-stroke-width;
-  }
-  circle.philly {
-    fill: $philly !important;
-    r: $highlight-bubble-radius;
-  }
-  text.philly {
-    stroke: $black;
-    fill: $black; 
-  }
+g.pistons {
+  @include normal-line($pistons)
 }
-
 .highlight.pistons {
-  path.pistons {
-    stroke: $pistons;
-    stroke-width: $highlight-stroke-width;
-  }
-  circle.pistons {
-    fill: $pistons !important;
-    r: $highlight-bubble-radius;
-  }
-  text.pistons {
-    stroke: $black;
-    fill: $black; 
+  g.pistons {
+    @include highlight-line($pistons)
   }
 }
 
+g.jazz {
+  @include normal-line($jazz)
+}
+.highlight.jazz {
+  g.jazz {
+    @include highlight-line($jazz)
+  }
+}
+
+g.kings {
+  @include normal-line($kings)
+}
+.highlight.kings {
+  g.kings {
+    @include highlight-line($kings)
+  }
+}
+
+g.suns {
+  @include normal-line($suns)
+}
+.highlight.suns {
+  g.suns {
+    @include highlight-line($suns)
+  }
+}
+
+g.mavericks {
+  @include normal-line($mavericks)
+}
+.highlight.mavericks {
+  g.mavericks {
+    @include highlight-line($mavericks)
+  }
+}
+
+g.hornets {
+  @include normal-line($hornets)
+}
 .highlight.hornets {
-  path.hornets {
-    stroke: $hornets;
-    stroke-width: $highlight-stroke-width;
-  }
-  circle.hornets {
-    fill: $hornets !important;
-    r: $highlight-bubble-radius;
-  }
-  text.hornets {
-    stroke: $black;
-    fill: $black; 
+  g.hornets {
+    @include highlight-line($hornets)
   }
 }
 
+g.magic {
+  @include normal-line($magic)
+}
+.highlight.magic {
+  g.magic {
+    @include highlight-line($magic)
+  }
+}
+
+g.knicks {
+  @include normal-line($knicks)
+}
+.highlight.knicks {
+  g.knicks {
+    @include highlight-line($knicks)
+  }
+}
+
+g.timberwolves {
+  @include normal-line($timberwolves)
+}
+.highlight.timberwolves {
+  g.timberwolves {
+    @include highlight-line($timberwolves)
+  }
+}
+
+g.nuggets {
+  @include normal-line($nuggets)
+}
+.highlight.nuggets {
+  g.nuggets {
+    @include highlight-line($nuggets)
+  }
+}
+
+g.lakers {
+  @include normal-line($lakers)
+}
+.highlight.lakers {
+  g.lakers {
+    @include highlight-line($lakers)
+  }
+}
+
+g.blazers {
+  @include normal-line($blazers)
+}
+.highlight.blazers {
+  g.blazers {
+    @include highlight-line($blazers)
+  }
+}
+
+g.nets {
+  @include normal-line($nets)
+}
+.highlight.nets {
+  g.nets {
+    @include highlight-line($nets)
+  }
+}
+
+g.philly {
+  @include normal-line($philly)
+}
+.highlight.philly {
+  g.philly {
+    @include highlight-line($philly)
+  }
+}
