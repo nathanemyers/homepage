@@ -2,3 +2,11 @@
 db.sqlite3
 settings_secret.py
 .sass-cache
+**/static/**/css/**
+bin/
+lib/
+share/
+include/
+.Python
+pip-selfcheck.json
+nathanemyers/uploads

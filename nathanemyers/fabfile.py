@@ -6,6 +6,7 @@ def deploy():
     deploy_dir = '/home/nathan/homepage/'
     local('./manage.py test')
     local('sass --update nathanemyers/sass:nathanemyers/static/css/')
+    local('sass --update nbapowerranks/sass:nbapowerranks/static/css/')
     local('find . -name "*.pyc" -exec rm -rf {} \;')
     run('mkdir -p ' + deploy_dir + 'nathanemyers/')
     run('mkdir -p ' + deploy_dir + 'nbapowerranks/')
@@ -26,4 +27,4 @@ def deploy():
     run('sudo service apache2 restart')
 
 def sass():
-    local('sass --watch nbapowerranks/sass:nbapowerranks/static')
+    local('sass --watch nbapowerranks/sass:nbapowerranks/static/css')
