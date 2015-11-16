@@ -79,6 +79,12 @@ function build_chart(selector) {
         })
         .attr('class', lineClass)
         .style('text-anchor', 'end')
+        .on('mouseenter', function(d) {
+          $('.chart').addClass('highlight ' + team2class(d.name));
+        })
+        .on('mouseout', function(d) {
+          $('.chart').removeClass('highlight ' + team2class(d.name));
+        })
         .text(function(d) {return d.name;});
 
     var bubbles = team_lines.selectAll('circle')
