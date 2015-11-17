@@ -1,6 +1,6 @@
 function build_chart(selector) {
   var border_left = 120;
-  var border_right = 10;
+  var border_right = 50;
   var border_top = 10;
   var border_bottom = 40;
 
@@ -29,6 +29,11 @@ function build_chart(selector) {
   var xAxis = d3.svg.axis()
     .ticks(max_weeks)
     .scale(x);
+    
+  var yAxis = d3.svg.axis()
+    .ticks(6)
+    .orient('right')
+    .scale(y);
 
   // can't have a css class named 76ers
   var team2class = function(team) {
@@ -144,14 +149,30 @@ function build_chart(selector) {
 
     svgContainer.append('g')
       .attr('class', 'axis')
-      // -10 for 10px border
-      .attr('transform', 'translate(0,' + ( height - (border_bottom - 10) ) + ')')
+      // -12 for 12px border
+      .attr('transform', 'translate(0,' + ( height - (border_bottom - 12) ) + ')')
       .call(xAxis);
 
       svgContainer.append('text')
-        .attr('x', width/2)
+        .attr('x', width / 2)
         .attr('y', height)
         .text('Week');
+
+
+    yAxisSvg = svgContainer
+      .append('g')
+        .attr('class', 'axis')
+        .attr('transform', 'translate(' + ( width - border_right ) + ',0)')
+        .call(yAxis);
+
+    svgContainer.append('text')
+      .attr('x', 0 - (height / 2))
+      .attr('y', width - 10)
+      .attr('transform', 'rotate(-90)')
+      .text('Rank');
+
+
+
   });
 
 }
