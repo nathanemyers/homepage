@@ -156,7 +156,7 @@ class Command(BaseCommand):
             # TODO comment.getText() will sometimes leave a bunch of whitespace at the end, doesn't seem to effect webapp though
             comment_string = comment.getText()
 
-            record = 'stub'
+            record = row.find('span', class_='pr-record').string
 
             if options['test']:
                 print 'Team: ' + str(team)
@@ -167,6 +167,7 @@ class Command(BaseCommand):
                 rank_object = Ranking(
                         year = YEAR,
                         rank = rank,
+                        record = record,
                         team = team,
                         summary = comment_string,
                         week = week

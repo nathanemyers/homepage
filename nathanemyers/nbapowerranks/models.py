@@ -24,6 +24,7 @@ class Ranking(models.Model):
     week = models.IntegerField()
     team = models.ForeignKey(Team)
     rank = models.IntegerField()
+    record = models.CharField(max_length=20, default='-')
     summary = models.TextField()
     def __str__(self):
         return str(self.year) + ' week ' + str(self.week) + ': ' + str(self.team) + ' #' + str(self.rank)
