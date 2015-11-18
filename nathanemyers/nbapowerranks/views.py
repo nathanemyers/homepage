@@ -5,7 +5,7 @@ from .models import Team, Ranking
 # Create your views here.
 def chart(request):
     return render(request, 'chart/nba_power_rankings.html', {
-        'version': '1.11'
+        'version': '1.2'
         })
 
 def week_rankings(request, year, week):
