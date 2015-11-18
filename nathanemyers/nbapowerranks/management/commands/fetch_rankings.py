@@ -96,6 +96,12 @@ class Command(BaseCommand):
                 nargs='?',
                 help='Fetch the specified week')
 
+        parser.add_argument('--test',
+                action='store_true',
+                dest='test',
+                default=False,
+                help='Output data to stdout instead of DB')
+
     def handle(self, *args, **options):
         url = 'http://espn.go.com/nba/powerrankings'
         if 'week' in options and options['week'] is not None:
@@ -118,15 +124,20 @@ class Command(BaseCommand):
         else:
             week = int(re.search('Week (\w+)', matched_week).group(1))
 
-        lookup = Ranking.objects.filter(year=YEAR, week=week)
-        if len(lookup) > 0: 
-            # TODO should check to see if all 30 rankings are present, 
-            # and clean up any partial uploads if needed
-            sys.stdout.write('Ranking data for Year: ' + str(YEAR) + ' Week: ' + str(week) + ' already present. Quiting.\n')
-            sys.stdout.flush()
-            return
+        if not options['test']:
+            lookup = Ranking.objects.filter(year=YEAR, week=week)
+            if len(lookup) > 0: 
+                # TODO should check to see if all 30 rankings are present, 
+                # and clean up any partial uploads if needed
+                sys.stdout.write('Ranking data for Year: ' + str(YEAR) + ' Week: ' + str(week) + ' already present. Quiting.\n')
+                sys.stdout.flush()
+                return
 
         rows = table.find_all('tr', ['evenrow', 'oddrow'])
+
+        if options['test']:
+            print 'Year: ' + str(YEAR)
+            print 'Week: ' + str(week) + '\n'
 
         for row in rows:
             cols = row.find_all('td')
@@ -142,17 +153,25 @@ class Command(BaseCommand):
             team = resolve_team(team_html_link)
 
             comment = stripTags(cols[3], ['b', 'i', 'a', 'u'])
-            # TODO comment.getText() will sometimes leave a bunch of whitespace at the end
+            # TODO comment.getText() will sometimes leave a bunch of whitespace at the end, doesn't seem to effect webapp though
             comment_string = comment.getText()
 
-            rank_object = Ranking(
-                    year = YEAR,
-                    rank = rank,
-                    team = team,
-                    summary = comment_string,
-                    week = week
-                    )
-            rank_object.save()
+            record = 'stub'
+
+            if options['test']:
+                print 'Team: ' + str(team)
+                print 'Rank: ' + rank
+                print 'Record: ' + record
+                print 'Summary: ' + comment_string + '\n'
+            else:
+                rank_object = Ranking(
+                        year = YEAR,
+                        rank = rank,
+                        team = team,
+                        summary = comment_string,
+                        week = week
+                        )
+                rank_object.save()
 
         sys.stdout.write('Finished scrape of Year: ' + str(YEAR) + ' Week: ' + str(week) + '.\n')
             
