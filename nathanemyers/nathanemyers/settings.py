@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'nbapowerranks',
+    'at_mapper',
     'mptt',
     'tagging',
     'zinnia',
@@ -64,6 +65,7 @@ TEMPLATES = [
         'DIRS': [
             os.path.join(BASE_DIR, 'nathanemyers/templates'),
             os.path.join(BASE_DIR, 'nbapowerranks/templates'),
+            os.path.join(BASE_DIR, 'at_mapper/templates'),
             ],
         'APP_DIRS': True,
         'OPTIONS': {
