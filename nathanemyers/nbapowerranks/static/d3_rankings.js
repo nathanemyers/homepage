@@ -37,7 +37,10 @@ function build_chart(selector) {
 
   // can't have a css class named 76ers
   var team2class = function(team) {
-    return (team === '76ers') ? 'philly' : team;
+    var class_name = team;
+    class_name = (class_name === '76ers') ? 'philly' : class_name;
+    class_name = (class_name === 'Trail Blazers') ? 'Blazers' : class_name;
+    return class_name;
   };
 
   var lineClass = function(data) {
@@ -50,6 +53,14 @@ function build_chart(selector) {
         classes += ' western';
       }
       return classes;
+  };
+
+  var bring_to_fore = function(team) {
+    var visible = svgContainer.select('.visible_data');
+    var team_node = visible.select('g.' + team ).node();
+    //var node = colored_line.node();
+    //node.parentNode.parentNode.appendChild(node.parentNode);
+    team_node.parentNode.appendChild(team_node);
   };
 
   var tooltip = d3.tip()
@@ -69,8 +80,11 @@ function build_chart(selector) {
       data[0].color = '#000';
     };
 
+    var visible = svgContainer
+      .append('g')
+      .attr('class', 'visible_data');
 
-    var team_lines = svgContainer.selectAll('g')
+    var team_lines = visible.selectAll('g')
       .data(data)
       .enter().append('g')
         .attr('class', lineClass);
@@ -88,6 +102,7 @@ function build_chart(selector) {
         .attr('class', lineClass)
         .style('text-anchor', 'end')
         .on('mouseenter', function(d) {
+          bring_to_fore(team2class(d.name));
           $('.chart').addClass('highlight ' + team2class(d.name));
         })
         .on('mouseout', function(d) {
@@ -121,6 +136,7 @@ function build_chart(selector) {
       .attr('d', function(d) { return line(d.rankings); })
       .attr('class', 'line-handle')
       .on('mouseenter', function(d) {
+        bring_to_fore(team2class(d.name));
         $('.chart').addClass('highlight ' + team2class(d.name));
       })
       .on('mouseout', function(d) {
@@ -140,13 +156,14 @@ function build_chart(selector) {
         .style('fill', 'red')
         .style('opacity', '0')
         .on('mouseenter', function(d) {
-          //var name = d3.select(this.parentNode).datum().name;
-          $('.chart').addClass('highlight ' + team2class(d.name));
+          var name = d3.select(this.parentNode).datum().name;
+          bring_to_fore(team2class(name));
+          $('.chart').addClass('highlight ' + team2class(name));
           tooltip.show(d);
         })
         .on('mouseout', function(d) {
-          //var name = d3.select(this.parentNode).datum().name;
-          $('.chart').removeClass('highlight ' + team2class(d.name));
+          var name = d3.select(this.parentNode).datum().name;
+          $('.chart').removeClass('highlight ' + team2class(name));
           tooltip.hide();
         });
 
