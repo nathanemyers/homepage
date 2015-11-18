@@ -26,14 +26,19 @@ def year_rankings(request, year):
     for rank in rankings:
         if rank.team.name in formatted_rankings:
             formatted_rankings[rank.team.name].append({
+                 # for D3 simplicity duplicate the name 
+                'name': rank.team.region + ' ' + rank.team.name,
                 'week': rank.week,
                 'rank': rank.rank,
+                'record': rank.record,
                 'summary': rank.summary,
                 })
         else:
             formatted_rankings[rank.team.name] = [{
+                'name': rank.team.region + ' ' + rank.team.name,
                 'week': rank.week,
                 'rank': rank.rank,
+                'record': rank.record,
                 'summary': rank.summary,
                 }]
 

@@ -56,7 +56,10 @@ function build_chart(selector) {
     .attr('class', 'd3-tip')
     .offset([-10, 0])
     .html(function(d) {
-      return d.summary;
+      return '<div class="d3-tip-header">' + 
+        '#' + d.rank + ' ' + d.name + ' (' + d.record + ')' + 
+        '</div>' + 
+        d.summary;
     });
   svgContainer.call(tooltip);
 
@@ -137,13 +140,13 @@ function build_chart(selector) {
         .style('fill', 'red')
         .style('opacity', '0')
         .on('mouseenter', function(d) {
-          var name = d3.select(this.parentNode).datum().name;
-          $('.chart').addClass('highlight ' + team2class(name));
+          //var name = d3.select(this.parentNode).datum().name;
+          $('.chart').addClass('highlight ' + team2class(d.name));
           tooltip.show(d);
         })
         .on('mouseout', function(d) {
-          var name = d3.select(this.parentNode).datum().name;
-          $('.chart').removeClass('highlight ' + team2class(name));
+          //var name = d3.select(this.parentNode).datum().name;
+          $('.chart').removeClass('highlight ' + team2class(d.name));
           tooltip.hide();
         });
 
@@ -170,8 +173,6 @@ function build_chart(selector) {
       .attr('y', width - 10)
       .attr('transform', 'rotate(-90)')
       .text('Rank');
-
-
 
   });
 

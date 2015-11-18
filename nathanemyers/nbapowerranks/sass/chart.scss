@@ -39,12 +39,16 @@ $hornets: #1D1160;
 
 .d3-tip {
   line-height: 1;
-  font-weight: bold;
   padding: 12px;
   background: rgba(0, 0, 0, 0.8);
   color: #fff;
   border-radius: 2px;
   max-width: 400px;
+  
+}
+
+.d3-tip-header {
+  font-weight: bold;
 }
 
 /* Creates a small triangle extender for the tooltip */
