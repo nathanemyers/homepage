@@ -1,6 +1,10 @@
 import os, sys, glob
 from PIL import Image
 
+# This utility is intended for bulk resizing of images
+# so we can make thumbnails and acceptably sized full size
+# images.  Note that it strips EXIF data.
+
 size = 128, 128
 
 input_dir = sys.argv[1] + '*'
