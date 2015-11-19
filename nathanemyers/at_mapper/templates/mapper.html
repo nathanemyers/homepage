@@ -2,9 +2,19 @@
 
 {% block head %}
 <script src="/static/mapper.js?ver={{version}}" type="text/javascript" charset="utf-8"></script>
+
+<script async defer 
+     src="https://maps.googleapis.com/maps/api/js?key={{map_api_key}}&callback=initMap">
+</script>
+   
 <link rel="stylesheet" href="/static/css/mapper.css?ver={{version}}" type="text/css" charset="utf-8">
 {% endblock %}
 
 {% block content %}
-NOBO4LYFE
+<div class="map-container">
+  <div id="map">
+    
+  </div>
+  
+</div>
 {% endblock %}
