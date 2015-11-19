@@ -3,6 +3,10 @@ import json
 from nbapowerranks.models import Team
 from django.core.management.base import BaseCommand, CommandError
 
+# This is a little utility for seeding the NBA Teams in the database
+# Be advised that re-running with Team data already loaded will screw
+# everything up. Sounds like a TODO to me.
+
 # example data format:
   #'teams': [
         #{
@@ -17,6 +21,7 @@ from django.core.management.base import BaseCommand, CommandError
 
 
 class Command(BaseCommand):
+    help = 'Seeds DB with Team data. *Do not run on populated Team DB!*'
     #def add_arguments(self, parser):
 
     def handle(self, *args, **options):
