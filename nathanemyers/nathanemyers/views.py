@@ -5,7 +5,7 @@ from django.views import generic
 
 from zinnia.models import Entry
 
-version = '1.0'
+version = '1.1'
 
 # Create your views here.
 class IndexView(generic.ListView):
