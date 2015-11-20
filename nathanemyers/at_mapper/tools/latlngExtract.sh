@@ -6,6 +6,9 @@
 # making extraction difficult. Thankfully OSX comes with a
 # utility 'mdls' that neatly outputs iPhone EXIF data
 
-lat=$(mdls $1 | grep Latitude | awk '{print $3}')
-lng=$(mdls $1 | grep Longitude | awk '{print $3}')
-echo $lat / $lng
+for file in "$@"
+do
+  lat=$(mdls $file | grep Latitude | awk '{print $3}')
+  lng=$(mdls $file | grep Longitude | awk '{print $3}')
+  echo [$lat, $lng],
+done
