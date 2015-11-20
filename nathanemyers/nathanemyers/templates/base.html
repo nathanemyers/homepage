@@ -6,6 +6,7 @@
 
   <link rel="stylesheet" href="/static/css/base.css?ver={{version}}" type="text/css" media="all" />
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="/static/js/base.js?ver={{version}}"></script>
 
   {% block head %}
   {% endblock %}
@@ -16,28 +17,41 @@
 </head>
 
 <body onload="">
-  <div class="header-container">
-    <div class="header">
-      <div class="header-title">Nathan Myers</div>
-      <div class="header-slogan">Design &amp; Development</div>
+  <div class="header">
+    <div class="top-spacer">
+
     </div>
-  </div>
 
-  <div class="main-container">
-      <div class="nav">
-        <ul>
-          <li><a href='/'>Home</a></li>
-          <li><a href='/projects/'>Projects</a></li>
-          <li><a href='/about'>About</a></li>
-        </ul>
-      </div>
+    <div class="header-perm ">
+      <div class="page-centered">
+        <div class="header-title">Nathan Myers</div>
 
-      <div class="main">
-        <div class="content">
-          {% block content %}
-          {% endblock %}
+        <div class="nav">
+          <ul>
+            <li><a href='/'>Home</a></li>
+            <li><a href='/projects/'>Projects</a></li>
+            <li><a href='/about'>About</a></li>
+          </ul>
         </div>
       </div>
+    </div>
+
+    <div class="header-slogan">
+      <div class="page-centered">
+        <div class="header-slogan">Design &amp; Development</div>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="main-container">
+
+    <div class="main">
+      <div class="content">
+        {% block content %}
+        {% endblock %}
+      </div>
+    </div>
 
   </div>
 

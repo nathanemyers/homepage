@@ -1,14 +1,13 @@
 @import '_variables.scss';
 
-$footer-link-color: #9ABFD6; 
 body {
-  background: url(/static/images/grey-prism.svg) center;
-  /*background: linear-gradient(to right, #D3E8CF, #9ABFD6);*/
+  /*background: url(/static/images/grey-prism.svg) center;*/
+  background: $white;
   margin: 0;
   font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica';
 
   a {
-    color: #427371;
+    color: $blue;
   }
 
   a:hover, a:visited, a:link, a:active {
@@ -16,37 +15,74 @@ body {
   }
 }
 
-
-.header {
-  color: $headline-text;
-  display: table;
+$perm-header-height: 42px;
+.page-centered {
+  max-width: $main-width;
   margin: 0 auto;
-  padding: 1.85em 0;
 }
 
-.header-title {
-  font-size: 1.5em;
-  margin-bottom: .2em;
+
+.stick {
 
   @media (min-width: $mobile-width) {
-    font-size: 2.2em;
+    .header-perm {
+      width: 100%;
+      margin: 0 auto;
+      background-color: $dark-blue;
+      position: fixed;
+      top: 0px;
+    }
+
+    .header-slogan {
+      margin-top: $perm-header-height;   
+    }
   }
 }
 
+.header {
+  background-color: $dark-blue;
+}
+
+.top-spacer {
+  height: 20px;
+}
+
+.header-perm {
+
+}
+
 .header-slogan {
-  font-size: 1.2em;
+  display: none;
 
   @media (min-width: $mobile-width) {
+    display: block;
     font-size: 1.6em;
-    color: lighten($headline-text, 10%);
+    height: 60px;
+    font-size: 1.2em;
+    color: $highlight-blue;
+  }
+}
+
+.header-title {
+  color: $blue;
+  font-size: 1.5em;
+  text-align: center;
+
+  @media (min-width: $mobile-width) {
+    display: inline-block;
+    text-align: left;
+    font-size: 2.2em;
   }
 }
 
 .nav {
   text-align: center;
-  color: $headline-text;
+  color: $highlight-blue;
   
   @media (min-width: $mobile-width) {
+    display: inline-block;
+    width: 350px;
+    float: right;
     font-size: 1.2em;
   }
 
@@ -65,18 +101,17 @@ body {
     display: inline-block;
     width: 100%;
     padding: .5em 0;
-    border-bottom: 4px solid #E8E8E8;
   }
 
   li a:hover{
-    border-bottom: 4px solid #B6D3D2;
+    background-color: $red;
+    color: $white;
   }
 }
 
 
 .main-container {
   border-radius: .5em;
-  background-color: #F1F1F1;
   margin: 8px;
 
   @media (min-width: $mobile-width) {
@@ -86,8 +121,7 @@ body {
 }
 
 .main {
-  background-color: $main-background;
-  border-top: 1px solid #DCDCDC;
+
 }
 
 .content {
@@ -97,7 +131,7 @@ body {
 }
 
 .footer-container {
-  background-color: #545454;
+  background-color: $dark-blue;
   padding: .8em 0;
   margin-top: .5em;
 
@@ -106,10 +140,10 @@ body {
   }
 
   a {
-    color: $footer-link-color;
+    color: $blue
   }
   a:hover {
-    color: darken($footer-link-color, 20%);
+    color: $highlight-blue; 
   }
 }
 
@@ -132,13 +166,13 @@ body {
   img {
     border-radius: 50%;
     height: 100px;
-    border: 1px solid black;
+    border: 3px solid $blue;
   }
 }
 
 .footer-content {
   vertical-align: top;
-  color: #F9F9F9;
+  color: $white;
   width: auto;
   overflow: hidden;
 }
