@@ -8,6 +8,10 @@ def chart(request):
         'version': '1.2'
         })
 
+def info(request):
+    most_recent = Ranking.objects.last()
+    return JsonResponse({'most_recent_week': most_recent.week})
+
 def week_rankings(request, year, week):
     rankings = Ranking.objects.filter(year=year, week=week)
     formatted_rankings = {}
