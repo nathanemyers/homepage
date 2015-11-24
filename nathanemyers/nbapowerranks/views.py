@@ -17,8 +17,17 @@ def week_rankings(request, year, week):
     return JsonResponse({'rankings': formatted_rankings})
 
 def year_rankings(request, year):
-    rankings = Ranking.objects.filter(year=year)
+    start_week = request.GET.get('start_week', 0)
+    end_week = request.GET.get('end_week', 50) # I'm not sure exactly how many weeks there will be
+
+    rankings = Ranking.objects.filter(
+            year=year,
+            week__gte=start_week,
+            week__lte=end_week 
+            )
     formatted_rankings = {}
+    
+
     # Ok, this is textbook what-not-to-do in forming your return
     # queries but I am tired of fighting the django ORM right now
     # so I'm just going to do it manually. For future reference,
