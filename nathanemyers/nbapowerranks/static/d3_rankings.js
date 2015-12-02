@@ -10,6 +10,7 @@ function build_chart(selector) {
   // these vars will be inited when we find_chart_size 
   var width;
   var max_weeks;
+  var most_recent_week;
 
   // need to wait to find the width of chart
   var x;
@@ -66,23 +67,25 @@ function build_chart(selector) {
 
   function find_chart_size() {
     $.getJSON("/nba/api/rankings/info", function(data) {
-      var most_recent_week = data.most_recent_week;
+      most_recent_week = data.most_recent_week;
       width = parseInt(svgContainer.style('width'));
 
       max_weeks = Math.floor(width / 100);
-
-      x = d3.scale.linear()
-        .domain([0, max_weeks])
-        .range([border_left, width - border_right]);
-      xAxis = d3.svg.axis()
-        .ticks(max_weeks)
-        .scale(x);
+      end_week = Math.max(most_recent_week, max_weeks);
 
       if (max_weeks > 18) {
         max_weeks = 18;
       }
-      var start_week = most_recent_week - max_weeks;
+      // we're inclusive on both ends, so we need to knock max_weeks down 1
+      var start_week = most_recent_week - (max_weeks - 1);
       start_week = (start_week < 0) ? 0 : start_week;
+
+      x = d3.scale.linear()
+        .domain([start_week, end_week])
+        .range([border_left, width - border_right]);
+      xAxis = d3.svg.axis()
+        .ticks(end_week - start_week)
+        .scale(x);
 
       render_chart('2016', start_week, most_recent_week);
     });
@@ -216,4 +219,20 @@ function build_chart(selector) {
 
   // kicks off render
   find_chart_size();
+  //$(window).resize(function() {
+      //width = parseInt(svgContainer.style('width'));
+
+      //max_weeks = Math.floor(width / 100);
+
+      //if (max_weeks > 18) {
+        //max_weeks = 18;
+      //}
+
+      //var start_week = most_recent_week - max_weeks;
+      //start_week = (start_week < 0) ? 0 : start_week;
+
+      //x.domain([start_week, max_weeks]);
+      //x.range([border_left, width - border_right]);
+      //xAxis.ticks(max_weeks);
+  //});
 }
